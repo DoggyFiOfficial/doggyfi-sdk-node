@@ -1,0 +1,62 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as InfoAPI from './info';
+
+export class Info extends APIResource {
+  /**
+   * Get Dunes info
+   */
+  retrieve(duneId: string, options?: Core.RequestOptions): Core.APIPromise<InfoRetrieveResponse> {
+    return this._client.get(`/dunes/info/${duneId}`, options);
+  }
+}
+
+export interface InfoRetrieveResponse {
+  id: string;
+
+  divisibility: number | null;
+
+  etching_cenotaph: boolean;
+
+  etching_height: number;
+
+  etching_tx: string;
+
+  max_supply: string | null;
+
+  mints: number;
+
+  name: string;
+
+  spaced_name: string;
+
+  symbol: string | null;
+
+  terms: InfoRetrieveResponse.Terms;
+
+  total_utxos: number;
+
+  unique_holders: number;
+}
+
+export namespace InfoRetrieveResponse {
+  export interface Terms {
+    amount_per_mint: string | null;
+
+    end_height: string | null;
+
+    end_offset: string | null;
+
+    mint_txs_cap: string | null;
+
+    start_height: string | null;
+
+    start_offset: string | null;
+  }
+}
+
+export namespace Info {
+  export import InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
+}

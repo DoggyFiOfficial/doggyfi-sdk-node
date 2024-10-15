@@ -4,9 +4,9 @@ import DoggyfiSDK from 'doggyfi-sdk';
 import { Response } from 'node-fetch';
 
 const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
-const duneId = process.env['TEST_DUNE_ID']
+const duneId = process.env['TEST_DUNE_ID'];
 if (!duneId) {
-  throw new Error('TEST_DUNE_ID COULD NOT BE READ FROM PROCESS.ENV')
+  throw new Error('TEST_DUNE_ID COULD NOT BE READ FROM PROCESS.ENV');
 }
 
 describe('resource info', () => {

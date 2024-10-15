@@ -17,6 +17,11 @@ npm install git+ssh://git@github.com:stainless-sdks/doggyfi-sdk-node.git
 > [!NOTE]
 > Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`
 
+## Setting up your environment
+The library requires you to include a variable called 'DOGGYFI_SDK_BASE_URL' in your `process.env`.
+
+We have provided an example `.env` file for you at `.env/example`
+
 ## Usage
 
 The full API of this library can be found in [api.md](api.md).

@@ -22,6 +22,8 @@ The library requires you to include a variable called 'DOGGYFI_SDK_BASE_URL' in 
 
 We have provided an example `.env` file for you at `.env/example`
 
+As of 2024-10-15, the URL needed is `https://api.doggyfi.xyz/`
+
 ## Usage
 
 The full API of this library can be found in [api.md](api.md).

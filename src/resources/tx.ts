@@ -169,9 +169,9 @@ export namespace TxBuildParams {
 
   export interface Fees {
     /**
-     * Address to send leftover funds to
+     * Address to use fee funds from
      */
-    changeAddress: string;
+    fundingAddress: string;
 
     /**
      * Fee rate in satoshis per byte (optional)

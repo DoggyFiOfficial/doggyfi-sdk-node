@@ -80,6 +80,6 @@ export interface UnspentRetrieveParams {
 }
 
 export namespace Unspents {
-  export import UnspentRetrieveResponse = UnspentsAPI.UnspentRetrieveResponse;
-  export import UnspentRetrieveParams = UnspentsAPI.UnspentRetrieveParams;
+  export type UnspentRetrieveResponse = UnspentsAPI.UnspentRetrieveResponse;
+  export type UnspentRetrieveParams = UnspentsAPI.UnspentRetrieveParams;
 }

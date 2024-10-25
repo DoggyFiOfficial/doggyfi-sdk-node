@@ -95,7 +95,7 @@ export interface TxPushResponse {
 export interface TxPushParams {}
 
 export namespace Tx {
-  export import TxRetrieveResponse = TxAPI.TxRetrieveResponse;
-  export import TxPushResponse = TxAPI.TxPushResponse;
-  export import TxPushParams = TxAPI.TxPushParams;
+  export type TxRetrieveResponse = TxAPI.TxRetrieveResponse;
+  export type TxPushResponse = TxAPI.TxPushResponse;
+  export type TxPushParams = TxAPI.TxPushParams;
 }

@@ -13,10 +13,10 @@ export class Dunes extends APIResource {
 
 export namespace Dunes {
   export import Balances = BalancesAPI.Balances;
-  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
+  export type BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
   export import Info = InfoAPI.Info;
-  export import InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
+  export type InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
   export import Utxos = UtxosAPI.Utxos;
-  export import UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
-  export import UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
+  export type UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
+  export type UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
 }

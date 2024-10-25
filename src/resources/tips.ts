@@ -20,5 +20,5 @@ export interface TipRetrieveResponse {
 }
 
 export namespace Tips {
-  export import TipRetrieveResponse = TipsAPI.TipRetrieveResponse;
+  export type TipRetrieveResponse = TipsAPI.TipRetrieveResponse;
 }

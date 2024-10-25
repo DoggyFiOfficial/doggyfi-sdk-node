@@ -39,5 +39,5 @@ export namespace InfoRetrieveResponse {
 }
 
 export namespace Info {
-  export type InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
+  export import InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
 }

@@ -158,29 +158,29 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace DoggyfiSDK {
-  export type RequestOptions = Core.RequestOptions;
+  export import RequestOptions = Core.RequestOptions;
 
   export import Unspents = API.Unspents;
-  export type UnspentRetrieveResponse = API.UnspentRetrieveResponse;
-  export type UnspentRetrieveParams = API.UnspentRetrieveParams;
+  export import UnspentRetrieveResponse = API.UnspentRetrieveResponse;
+  export import UnspentRetrieveParams = API.UnspentRetrieveParams;
 
   export import Tx = API.Tx;
-  export type TxRetrieveResponse = API.TxRetrieveResponse;
-  export type TxPushResponse = API.TxPushResponse;
-  export type TxPushParams = API.TxPushParams;
+  export import TxRetrieveResponse = API.TxRetrieveResponse;
+  export import TxPushResponse = API.TxPushResponse;
+  export import TxPushParams = API.TxPushParams;
 
   export import Drc = API.Drc;
 
   export import Dunes = API.Dunes;
 
   export import Blocks = API.Blocks;
-  export type BlockCountResponse = API.BlockCountResponse;
+  export import BlockCountResponse = API.BlockCountResponse;
 
   export import FeeRate = API.FeeRate;
-  export type FeeRateRetrieveResponse = API.FeeRateRetrieveResponse;
+  export import FeeRateRetrieveResponse = API.FeeRateRetrieveResponse;
 
   export import Tips = API.Tips;
-  export type TipRetrieveResponse = API.TipRetrieveResponse;
+  export import TipRetrieveResponse = API.TipRetrieveResponse;
 }
 
 export default DoggyfiSDK;

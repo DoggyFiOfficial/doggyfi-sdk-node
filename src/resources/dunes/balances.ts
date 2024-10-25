@@ -16,5 +16,5 @@ export class Balances extends APIResource {
 export type BalanceRetrieveResponse = Record<string, string>;
 
 export namespace Balances {
-  export type BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
+  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
 }

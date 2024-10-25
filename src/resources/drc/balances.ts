@@ -24,5 +24,5 @@ export namespace BalanceRetrieveResponse {
 }
 
 export namespace Balances {
-  export type BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
+  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
 }

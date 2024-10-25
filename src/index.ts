@@ -166,12 +166,18 @@ export namespace DoggyfiSDK {
 
   export import Tx = API.Tx;
   export import TxRetrieveResponse = API.TxRetrieveResponse;
+  export import TxBuildResponse = API.TxBuildResponse;
   export import TxPushResponse = API.TxPushResponse;
+  export import TxSendDogeResponse = API.TxSendDogeResponse;
+  export import TxBuildParams = API.TxBuildParams;
   export import TxPushParams = API.TxPushParams;
+  export import TxSendDogeParams = API.TxSendDogeParams;
 
   export import Drc = API.Drc;
 
   export import Dunes = API.Dunes;
+  export import DuneSendResponse = API.DuneSendResponse;
+  export import DuneSendParams = API.DuneSendParams;
 
   export import Blocks = API.Blocks;
   export import BlockCountResponse = API.BlockCountResponse;

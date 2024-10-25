@@ -11,7 +11,7 @@ export class Drc extends APIResource {
 
 export namespace Drc {
   export import Balances = BalancesAPI.Balances;
-  export type BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
+  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
   export import Info = InfoAPI.Info;
-  export type InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
+  export import InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
 }

@@ -32,12 +32,8 @@ describe('resource tx', () => {
     const responsePromise = client.tx.build({
       inputs: [
         { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
-        { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
-        { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
       ],
       outputs: [
-        { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
-        { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
         { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
       ],
     });
@@ -54,12 +50,8 @@ describe('resource tx', () => {
     const response = await client.tx.build({
       inputs: [
         { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
-        { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
-        { txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 },
       ],
       outputs: [
-        { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
-        { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
         { address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 },
       ],
       fees: { fundingAddress: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', feeRate: 164312 },

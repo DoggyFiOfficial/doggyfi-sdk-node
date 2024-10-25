@@ -19,5 +19,5 @@ export class Blocks extends APIResource {
 export type BlockCountResponse = number;
 
 export namespace Blocks {
-  export import BlockCountResponse = BlocksAPI.BlockCountResponse;
+  export type BlockCountResponse = BlocksAPI.BlockCountResponse;
 }

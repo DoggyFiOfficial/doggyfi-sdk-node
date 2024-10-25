@@ -15,5 +15,5 @@ export interface FeeRateRetrieveResponse {
 }
 
 export namespace FeeRate {
-  export import FeeRateRetrieveResponse = FeeRateAPI.FeeRateRetrieveResponse;
+  export type FeeRateRetrieveResponse = FeeRateAPI.FeeRateRetrieveResponse;
 }

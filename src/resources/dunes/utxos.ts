@@ -58,6 +58,6 @@ export interface UtxoRetrieveParams {
 }
 
 export namespace Utxos {
-  export import UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
-  export import UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
+  export type UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
+  export type UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
 }

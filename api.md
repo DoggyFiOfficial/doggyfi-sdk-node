@@ -13,12 +13,16 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/tx.ts">TxRetrieveResponse</a></code>
+- <code><a href="./src/resources/tx.ts">TxBuildResponse</a></code>
 - <code><a href="./src/resources/tx.ts">TxPushResponse</a></code>
+- <code><a href="./src/resources/tx.ts">TxSendDogeResponse</a></code>
 
 Methods:
 
 - <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
+- <code title="post /tx/build">client.tx.<a href="./src/resources/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
 - <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>() -> TxPushResponse</code>
+- <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
 
 # Drc
 
@@ -43,6 +47,14 @@ Methods:
 - <code title="get /drc/info/{ticker}">client.drc.info.<a href="./src/resources/drc/info.ts">retrieve</a>(ticker) -> InfoRetrieveResponse</code>
 
 # Dunes
+
+Types:
+
+- <code><a href="./src/resources/dunes/dunes.ts">DuneSendResponse</a></code>
+
+Methods:
+
+- <code title="post /dunes/send">client.dunes.<a href="./src/resources/dunes/dunes.ts">send</a>({ ...params }) -> DuneSendResponse</code>
 
 ## Balances
 

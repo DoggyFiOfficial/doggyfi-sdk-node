@@ -2,8 +2,17 @@
 
 export { BlockCountResponse, Blocks } from './blocks';
 export { Drc } from './drc/drc';
-export { Dunes } from './dunes/dunes';
+export { DuneSendResponse, DuneSendParams, Dunes } from './dunes/dunes';
 export { FeeRateRetrieveResponse, FeeRate } from './fee-rate';
 export { TipRetrieveResponse, Tips } from './tips';
-export { TxRetrieveResponse, TxPushResponse, TxPushParams, Tx } from './tx';
+export {
+  TxRetrieveResponse,
+  TxBuildResponse,
+  TxPushResponse,
+  TxSendDogeResponse,
+  TxBuildParams,
+  TxPushParams,
+  TxSendDogeParams,
+  Tx,
+} from './tx';
 export { UnspentRetrieveResponse, UnspentRetrieveParams, Unspents } from './unspents';

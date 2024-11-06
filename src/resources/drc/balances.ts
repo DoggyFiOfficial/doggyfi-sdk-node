@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as BalancesAPI from './balances';
 
 export class Balances extends APIResource {
   /**
@@ -23,6 +22,6 @@ export namespace BalanceRetrieveResponse {
   }
 }
 
-export namespace Balances {
-  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
+export declare namespace Balances {
+  export { type BalanceRetrieveResponse as BalanceRetrieveResponse };
 }

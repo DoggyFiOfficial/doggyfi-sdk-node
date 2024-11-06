@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as UnspentsAPI from './unspents';
 
 export class Unspents extends APIResource {
   retrieve(
@@ -79,7 +78,9 @@ export interface UnspentRetrieveParams {
   ignoreDust?: boolean | null;
 }
 
-export namespace Unspents {
-  export import UnspentRetrieveResponse = UnspentsAPI.UnspentRetrieveResponse;
-  export import UnspentRetrieveParams = UnspentsAPI.UnspentRetrieveParams;
+export declare namespace Unspents {
+  export {
+    type UnspentRetrieveResponse as UnspentRetrieveResponse,
+    type UnspentRetrieveParams as UnspentRetrieveParams,
+  };
 }

@@ -2,10 +2,12 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as DunesAPI from './dunes';
 import * as BalancesAPI from './balances';
+import { BalanceRetrieveResponse, Balances } from './balances';
 import * as InfoAPI from './info';
+import { Info, InfoRetrieveResponse } from './info';
 import * as UtxosAPI from './utxos';
+import { UtxoRetrieveParams, UtxoRetrieveResponse, Utxos } from './utxos';
 
 export class Dunes extends APIResource {
   balances: BalancesAPI.Balances = new BalancesAPI.Balances(this._client);
@@ -61,14 +63,20 @@ export interface DuneSendParams {
   feeRate?: number;
 }
 
-export namespace Dunes {
-  export import DuneSendResponse = DunesAPI.DuneSendResponse;
-  export import DuneSendParams = DunesAPI.DuneSendParams;
-  export import Balances = BalancesAPI.Balances;
-  export import BalanceRetrieveResponse = BalancesAPI.BalanceRetrieveResponse;
-  export import Info = InfoAPI.Info;
-  export import InfoRetrieveResponse = InfoAPI.InfoRetrieveResponse;
-  export import Utxos = UtxosAPI.Utxos;
-  export import UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
-  export import UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
+Dunes.Balances = Balances;
+Dunes.Info = Info;
+Dunes.Utxos = Utxos;
+
+export declare namespace Dunes {
+  export { type DuneSendResponse as DuneSendResponse, type DuneSendParams as DuneSendParams };
+
+  export { Balances as Balances, type BalanceRetrieveResponse as BalanceRetrieveResponse };
+
+  export { Info as Info, type InfoRetrieveResponse as InfoRetrieveResponse };
+
+  export {
+    Utxos as Utxos,
+    type UtxoRetrieveResponse as UtxoRetrieveResponse,
+    type UtxoRetrieveParams as UtxoRetrieveParams,
+  };
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as BlocksAPI from './blocks';
 
 export class Blocks extends APIResource {
   /**
@@ -18,6 +17,6 @@ export class Blocks extends APIResource {
  */
 export type BlockCountResponse = number;
 
-export namespace Blocks {
-  export import BlockCountResponse = BlocksAPI.BlockCountResponse;
+export declare namespace Blocks {
+  export { type BlockCountResponse as BlockCountResponse };
 }

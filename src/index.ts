@@ -154,25 +154,6 @@ export class DoggyfiSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  DoggyfiSDKError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 DoggyfiSDK.Unspents = Unspents;
 DoggyfiSDK.Tx = Tx;
 DoggyfiSDK.Drc = Drc;
@@ -180,7 +161,6 @@ DoggyfiSDK.Dunes = Dunes;
 DoggyfiSDK.Blocks = Blocks;
 DoggyfiSDK.FeeRate = FeeRate;
 DoggyfiSDK.Tips = Tips;
-
 export declare namespace DoggyfiSDK {
   export type RequestOptions = Core.RequestOptions;
 
@@ -211,5 +191,22 @@ export declare namespace DoggyfiSDK {
 
   export { Tips as Tips, type TipRetrieveResponse as TipRetrieveResponse };
 }
+
+export { toFile, fileFromPath } from 'doggyfi-sdk/uploads';
+export {
+  DoggyfiSDKError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from 'doggyfi-sdk/error';
 
 export default DoggyfiSDK;

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2024-11-12)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* Update README.md ([40cdf94](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/40cdf94521b84e1fb8379c7c739adee0e2023f09))
+
 ## 0.1.0-alpha.1 (2024-10-25)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)

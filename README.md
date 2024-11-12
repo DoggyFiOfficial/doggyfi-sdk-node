@@ -24,6 +24,17 @@ We have provided an example `.env` file for you at `.env/example`
 
 As of 2024-10-15, the URL needed is `https://api.doggyfi.xyz/`
 
+### NOTE, build errors
+We've had some users say when importing the sdk there are build errors with Vite saying files that are missing such as tsconfig, even though they are clearly not. From discussion those don't seem to be an issue as of 2024-11-12. We plan to address the cause of these build errors in the next version, but it seems that they can be addressed by simply adding skipLibCheck in your compliter options
+```{javascript}
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    // other options
+  }
+}
+```
+
 ## Usage
 
 The full API of this library can be found in [api.md](api.md).

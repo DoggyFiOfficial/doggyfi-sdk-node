@@ -9,10 +9,15 @@ The REST API documentation can be found on [docs.doggyfi-sdk.com](https://docs.d
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
-
 ```sh
-npm install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
+bun install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
 ```
+OR
+```
+bun install doggyfi-sdk
+```
+
+WE STRONGLY RECOMMEND INSTALLING WITH BUN, AND USING BUN FOR ALL PACKAGE MANAGEMENT.
 
 > [!NOTE]
 > Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`

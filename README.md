@@ -12,6 +12,12 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ```sh
 bun install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
 ```
+OR
+```
+bun install doggyfi-sdk
+```
+
+WE STRONGLY RECOMMEND INSTALLING WITH BUN, AND USING BUN FOR ALL PACKAGE MANAGEMENT.
 
 > [!NOTE]
 > Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`

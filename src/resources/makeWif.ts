@@ -50,11 +50,6 @@ export async function makeWif(
     throw new Error('Invalid mnemonic phrase');
   }
 
-  // if length of any word is < 4 throw error
-  if (mnemonicPhrase.split(' ').some((word) => word.length < 4)) {
-    throw new Error('Invalid mnemonic phrase');
-  }
-
   // Generate a seed from the mnemonic
   const seed = await bip39.mnemonicToSeed(mnemonicPhrase);
 

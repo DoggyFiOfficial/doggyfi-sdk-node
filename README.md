@@ -9,9 +9,8 @@ The REST API documentation can be found on [docs.doggyfi-sdk.com](https://docs.d
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
-
 ```sh
-npm install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
+bun install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
 ```
 
 > [!NOTE]

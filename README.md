@@ -9,13 +9,36 @@ The REST API documentation can be found on [docs.doggyfi-sdk.com](https://docs.d
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
-
 ```sh
-npm install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
+bun install git+ssh://git@github.com:DoggyFiOfficial/doggyfi-sdk-node.git
 ```
+OR
+```
+bun install doggyfi-sdk
+```
+
+WE STRONGLY RECOMMEND INSTALLING WITH BUN, AND USING BUN FOR ALL PACKAGE MANAGEMENT.
 
 > [!NOTE]
 > Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`
+
+## Setting up your environment
+The library requires you to include a variable called 'DOGGYFI_SDK_BASE_URL' in your `process.env`.
+
+We have provided an example `.env` file for you at `.env/example`
+
+As of 2024-10-15, the URL needed is `https://api.doggyfi.xyz/`
+
+### NOTE, build errors
+We've had some users say when importing the sdk there are build errors with Vite saying files that are missing such as tsconfig, even though they are clearly not. From discussion those don't seem to be an issue as of 2024-11-12. We plan to address the cause of these build errors in the next version, but it seems that they can be addressed by simply adding skipLibCheck in your compliter options
+```{javascript}
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    // other options
+  }
+}
+```
 
 ## Usage
 

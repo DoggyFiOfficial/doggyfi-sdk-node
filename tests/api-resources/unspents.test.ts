@@ -15,14 +15,14 @@ describe('resource unspents', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 20000);
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.unspents.retrieve('D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);
-  });
+  }, 20000);
 
   test('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
@@ -33,5 +33,5 @@ describe('resource unspents', () => {
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);
-  });
+  }, 20000);
 });

@@ -50,8 +50,8 @@ describe('resource tx', () => {
     });
   });
 
-  test('push', async () => {
-    const responsePromise = client.tx.push();
+  test('push: only required params', async () => {
+    const responsePromise = client.tx.push('body');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -61,11 +61,8 @@ describe('resource tx', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('push: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.tx.push({}, { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      DoggyfiSDK.NotFoundError,
-    );
+  test('push: required and optional params', async () => {
+    const response = await client.tx.push('body');
   });
 
   test('sendDoge: only required params', async () => {

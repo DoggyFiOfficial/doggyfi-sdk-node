@@ -88,7 +88,7 @@ export namespace TxRetrieveResponse {
 
       type: string;
 
-      addresses?: Array<string>;
+      addresses?: Array<string> | null;
     }
   }
 }

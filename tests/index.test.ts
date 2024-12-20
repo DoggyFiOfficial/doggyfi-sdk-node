@@ -113,6 +113,19 @@ describe('instantiate client', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
+  test('normalized method', async () => {
+    let capturedRequest: RequestInit | undefined;
+    const testFetch = async (url: RequestInfo, init: RequestInit = {}): Promise<Response> => {
+      capturedRequest = init;
+      return new Response(JSON.stringify({}), { headers: { 'Content-Type': 'application/json' } });
+    };
+
+    const client = new DoggyfiSDK({ baseURL: 'http://localhost:5000/', fetch: testFetch });
+
+    await client.patch('/foo');
+    expect(capturedRequest?.method).toEqual('PATCH');
+  });
+
   describe('baseUrl', () => {
     test('trailing slash', () => {
       const client = new DoggyfiSDK({ baseURL: 'http://localhost:5000/custom/path/' });

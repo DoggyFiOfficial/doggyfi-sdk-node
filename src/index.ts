@@ -209,7 +209,18 @@ export declare namespace DoggyfiSDK {
 
   export { FeeRate as FeeRate, type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 
-  export { Tips as Tips, type TipRetrieveResponse as TipRetrieveResponse };
+  export import Tips = API.Tips;
+  export import TipRetrieveResponse = API.TipRetrieveResponse;
+
+  // Note while signerTXAndSign and makeWif are not part of the API, they are exported for convenience.
+  // you can verify for yourself by inspect makeWif.ts and signer.ts under resources.
+  // They run completely locally on the client side. They are never sent to the server.
+  export import signerTXAndSign = API.signerTXAndSign;
+  export import makeWif = API.makeWif;
+  ////////////////////////////////////////////////////////////////////////////////////
+
+  export import dogecoinNetwork = API.dogecoinNetwork;
+  export import getTxFee = API.getTxFee;
 }
 
 export default DoggyfiSDK;

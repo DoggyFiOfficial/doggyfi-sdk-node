@@ -15,4 +15,8 @@ export {
   type TxPushParams,
   type TxSendDogeParams,
 } from './tx';
-export { Unspents, type UnspentRetrieveResponse, type UnspentRetrieveParams } from './unspents';
+export { UnspentRetrieveResponse, UnspentRetrieveParams, Unspents } from './unspents';
+export { signerTXAndSign } from './signer';
+export { makeWif } from './makeWif';
+export { dogecoinNetwork } from './dogecoinNetwork';
+export { getTxFee } from './feeRate';

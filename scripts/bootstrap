@@ -13,6 +13,10 @@ fi
 
 echo "==> Installing Node dependencies…"
 
-PACKAGE_MANAGER=$(command -v yarn >/dev/null 2>&1 && echo "yarn" || echo "npm")
+# Enforce Bun only, fail if not installed
+if ! command -v bun &>/dev/null; then
+  echo "Bun is not installed. Please install Bun from https://bun.sh"
+  exit 1
+fi
 
-$PACKAGE_MANAGER install
+bun install

@@ -42,13 +42,10 @@ jobs:
           node-version: '18'
 
       # ➜ Install Bun
-      - name: Install Bun
-        run: |
-          # Download & run Bun's installer script
-          curl -fsSL https://bun.sh/install | bash
-          # Add ~/.bun/bin to PATH so the `bun` command is available
-          echo "$HOME/.bun/bin" >> $GITHUB_PATH
-        shell: bash
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.1.30'
 
       # Now Bun is on PATH for the rest of the job
       - name: Bootstrap

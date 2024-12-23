@@ -1,19 +1,19 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { BlockCountResponse, Blocks } from './blocks';
+export { Blocks, type BlockCountResponse } from './blocks';
 export { Drc } from './drc/drc';
-export { DuneSendResponse, DuneSendParams, Dunes } from './dunes/dunes';
-export { FeeRateRetrieveResponse, FeeRate } from './fee-rate';
-export { TipRetrieveResponse, Tips } from './tips';
+export { Dunes, type DuneSendResponse, type DuneSendParams } from './dunes/dunes';
+export { FeeRate, type FeeRateRetrieveResponse } from './fee-rate';
+export { Tips, type TipRetrieveResponse } from './tips';
 export {
-  TxRetrieveResponse,
-  TxBuildResponse,
-  TxPushResponse,
-  TxSendDogeResponse,
-  TxBuildParams,
-  TxPushParams,
-  TxSendDogeParams,
   Tx,
+  type TxRetrieveResponse,
+  type TxBuildResponse,
+  type TxPushResponse,
+  type TxSendDogeResponse,
+  type TxBuildParams,
+  type TxPushParams,
+  type TxSendDogeParams,
 } from './tx';
 export { UnspentRetrieveResponse, UnspentRetrieveParams, Unspents } from './unspents';
 export { signerTXAndSign } from './signer';

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as TipsAPI from './tips';
 
 export class Tips extends APIResource {
   retrieve(options?: Core.RequestOptions): Core.APIPromise<TipRetrieveResponse> {
@@ -19,6 +18,6 @@ export interface TipRetrieveResponse {
   tipAddress?: string;
 }
 
-export namespace Tips {
-  export import TipRetrieveResponse = TipsAPI.TipRetrieveResponse;
+export declare namespace Tips {
+  export { type TipRetrieveResponse as TipRetrieveResponse };
 }

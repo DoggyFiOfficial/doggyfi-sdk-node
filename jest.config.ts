@@ -20,4 +20,8 @@ const config: JestConfigWithTsJest = {
   testPathIgnorePatterns: ['scripts'],
 };
 
+// env variables for testing
+process.env['TEST_API_BASE_URL'] = 'https://api.doggyfi.xyz/';
+process.env['TEST_DUNE_ID'] = '5345732:9';
+
 export default config;

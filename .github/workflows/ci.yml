@@ -33,31 +33,31 @@ jobs:
     runs-on: ubuntu-latest
     
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-    # ➜ Install Bun
-    - name: Install Bun
-      run: |
-        # Download & run Bun's installer script
-        curl -fsSL https://bun.sh/install | bash
-        # Add ~/.bun/bin to PATH so the `bun` command is available
-        echo "$HOME/.bun/bin" >> $GITHUB_PATH
-      shell: bash
+      # ➜ Install Bun
+      - name: Install Bun
+        run: |
+          # Download & run Bun's installer script
+          curl -fsSL https://bun.sh/install | bash
+          # Add ~/.bun/bin to PATH so the `bun` command is available
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+        shell: bash
 
-    # Now Bun is on PATH for the rest of the job
-    - name: Bootstrap
-      run: ./scripts/bootstrap
+      # Now Bun is on PATH for the rest of the job
+      - name: Bootstrap
+        run: ./scripts/bootstrap
 
-    - name: Check build
-      run: ./scripts/build
+      - name: Check build
+        run: ./scripts/build
   
-  
+
   test:
     name: test
     runs-on: ubuntu-latest

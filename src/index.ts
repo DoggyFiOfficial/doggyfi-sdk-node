@@ -203,7 +203,7 @@ export declare namespace DoggyfiSDK {
   export import getTxFee = API.getTxFee;
 }
 
-export { toFile, fileFromPath } from 'doggyfi-sdk/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   DoggyfiSDKError,
   APIError,
@@ -218,6 +218,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'doggyfi-sdk/error';
+} from './error';
 
 export default DoggyfiSDK;

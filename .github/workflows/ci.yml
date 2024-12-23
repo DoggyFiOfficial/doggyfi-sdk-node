@@ -16,17 +16,44 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      # - name: Set up Node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18'
+
+      # ➜ Install Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
 
       - name: Check types
         run: ./scripts/lint
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -am "Auto-fix linting and formatting issues"
+
+      - name: Push changes
+        if: steps.git-check.outputs.changes == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.head_ref }}
 
   build:
     name: build
@@ -41,11 +68,20 @@ jobs:
         with:
           node-version: '18'
 
+      # ➜ Install Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
+
+      # Now Bun is on PATH for the rest of the job
       - name: Bootstrap
         run: ./scripts/bootstrap
 
       - name: Check build
         run: ./scripts/build
+  
+
   test:
     name: test
     runs-on: ubuntu-latest
@@ -57,6 +93,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      # ➜ Install Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
 
       - name: Bootstrap
         run: ./scripts/bootstrap

@@ -50,6 +50,7 @@ describe('resource tx', () => {
     });
   });
 
+  // bump
   //   test('push', async () => {
   //     const responsePromise = client.tx.push();
   //     const rawResponse = await responsePromise.asResponse();

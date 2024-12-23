@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2024-12-23)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* adds line comment to get PR to start ([7951ec9](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/7951ec97bf829d47cb720e862ffdf47ed6669f57))
+* adds required param to test case for open dune ([942582f](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/942582f85e8ac617c453d17a92ec6aec1fc511dd))
+* fixes premine param on test case ([fd0449e](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/fd0449e81f1d79ee3aed8f172d3ea10e6fdb26af))
+* forces divisibility to be a required param ([f556a02](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/f556a021b363c24206c66cba0faa15a03d279347))
+* some fixes for test cases not passing ([de12219](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/de12219bc9c0d6c22be74f0331de8900646027d3))
+
 ## 0.1.0-alpha.6 (2024-12-23)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)

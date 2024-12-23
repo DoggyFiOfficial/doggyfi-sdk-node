@@ -60,7 +60,7 @@ describe('resource dunes', () => {
       offsetEnd: 10000000,
       offsetStart: 0,
       openMint: true,
-      premine: 'premine',
+      premine: '0',
       turbo: true,
     });
   }, 22000);

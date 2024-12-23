@@ -21,10 +21,18 @@ Methods:
 
 - <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
 - <code title="post /tx/build">client.tx.<a href="./src/resources/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
-- <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>() -> TxPushResponse</code>
+- <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>({ ...params }) -> TxPushResponse</code>
 - <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
 
 # Drc
+
+Types:
+
+- <code><a href="./src/resources/drc/drc.ts">DrcSendExactResponse</a></code>
+
+Methods:
+
+- <code title="post /drc20/sendExactDRC20/{address}/{ticker}/{amount}">client.drc.<a href="./src/resources/drc/drc.ts">sendExact</a>(address, ticker, amount) -> DrcSendExactResponse</code>
 
 ## Balances
 
@@ -50,10 +58,14 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/dunes/dunes.ts">DuneMintResponse</a></code>
+- <code><a href="./src/resources/dunes/dunes.ts">DuneOpenResponse</a></code>
 - <code><a href="./src/resources/dunes/dunes.ts">DuneSendResponse</a></code>
 
 Methods:
 
+- <code title="post /dunes/mint">client.dunes.<a href="./src/resources/dunes/dunes.ts">mint</a>({ ...params }) -> DuneMintResponse</code>
+- <code title="post /dunes/open">client.dunes.<a href="./src/resources/dunes/dunes.ts">open</a>({ ...params }) -> DuneOpenResponse</code>
 - <code title="post /dunes/send">client.dunes.<a href="./src/resources/dunes/dunes.ts">send</a>({ ...params }) -> DuneSendResponse</code>
 
 ## Balances
@@ -115,3 +127,13 @@ Types:
 Methods:
 
 - <code title="get /tip">client.tips.<a href="./src/resources/tips.ts">retrieve</a>() -> TipRetrieveResponse</code>
+
+# Prices
+
+Types:
+
+- <code><a href="./src/resources/prices.ts">PriceRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /prices/doggyfi-pool/{token}">client.prices.<a href="./src/resources/prices.ts">retrieve</a>(token) -> PriceRetrieveResponse</code>

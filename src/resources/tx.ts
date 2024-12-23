@@ -12,11 +12,9 @@ export class Tx extends APIResource {
     return this._client.post('/tx/build', { body, ...options });
   }
 
-  push(
-    body?: TxPushParams | null | undefined,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<TxPushResponse> {
+  push(body: TxPushParams, options?: Core.RequestOptions): Core.APIPromise<TxPushResponse> {
     return this._client.post('/tx/push', {
+      body,
       ...options,
       headers: { 'Content-Type': 'text/plain', ...options?.headers },
     });
@@ -90,7 +88,7 @@ export namespace TxRetrieveResponse {
 
       type: string;
 
-      addresses?: Array<string>;
+      addresses?: Array<string> | null;
     }
   }
 }
@@ -179,7 +177,7 @@ export namespace TxBuildParams {
   }
 }
 
-export interface TxPushParams {}
+export type TxPushParams = string;
 
 export interface TxSendDogeParams {
   /**

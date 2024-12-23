@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2024-12-23)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** api update ([#14](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/14)) ([78c253a](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/78c253a4dc863b6f5093e535736a10e875c59f1d))
+
+
+### Chores
+
+* rebuild project due to codegen change ([#11](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/11)) ([a73c2b7](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/a73c2b7f24d490d94495836597d61691932020f6))
+* rebuild project due to codegen change ([#15](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/15)) ([77b309a](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/77b309afc43c23f3c5117613c7f14b1a63da5443))
+* rebuild project due to codegen change ([#9](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/9)) ([6ef4ff1](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/6ef4ff12ba3e0a0be19605f1888bc7161d2c1c47))
+
 ## 0.1.0-alpha.3 (2024-11-26)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)

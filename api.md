@@ -21,7 +21,7 @@ Methods:
 
 - <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
 - <code title="post /tx/build">client.tx.<a href="./src/resources/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
-- <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>() -> TxPushResponse</code>
+- <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>({ ...params }) -> TxPushResponse</code>
 - <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
 
 # Drc

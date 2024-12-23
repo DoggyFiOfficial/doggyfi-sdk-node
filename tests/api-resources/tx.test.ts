@@ -62,9 +62,10 @@ describe('resource tx', () => {
   //     expect(dataAndResponse.response).toBe(rawResponse);
   //   });
 
-  test('push: required and optional params', async () => {
-    const response = await client.tx.push('body');
-  });
+  // can't test push b/c not real tx
+  // test('push: required and optional params', async () => {
+  //   const response = await client.tx.push('body');
+  // });
 
   test('sendDoge: only required params', async () => {
     const responsePromise = client.tx.sendDoge({

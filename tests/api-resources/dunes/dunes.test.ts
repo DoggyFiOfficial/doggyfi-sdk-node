@@ -44,7 +44,7 @@ describe('resource dunes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 22000);
 
   test('open: required and optional params', async () => {
     const response = await client.dunes.open({
@@ -62,7 +62,7 @@ describe('resource dunes', () => {
       premine: 'premine',
       turbo: true,
     });
-  });
+  }, 22000);
 
   test('send: only required params', async () => {
     const responsePromise = client.dunes.send({

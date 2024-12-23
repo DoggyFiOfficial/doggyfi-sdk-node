@@ -7,7 +7,7 @@ const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'ht
 
 describe('resource prices', () => {
   test('retrieve', async () => {
-    const responsePromise = client.prices.retrieve('token');
+    const responsePromise = client.prices.retrieve('baat'); // baat is a test token
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

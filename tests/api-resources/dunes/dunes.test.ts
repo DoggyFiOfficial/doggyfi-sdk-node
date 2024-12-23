@@ -36,6 +36,7 @@ describe('resource dunes', () => {
       address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
       symbol: 'D',
       ticker: 'THISISADUNENAME',
+      divisibility: 0, // this is a required param?
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);

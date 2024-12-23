@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as FeeRateAPI from './fee-rate';
 
 export class FeeRate extends APIResource {
   retrieve(options?: Core.RequestOptions): Core.APIPromise<FeeRateRetrieveResponse> {
@@ -14,6 +13,6 @@ export interface FeeRateRetrieveResponse {
   feeRate: number;
 }
 
-export namespace FeeRate {
-  export import FeeRateRetrieveResponse = FeeRateAPI.FeeRateRetrieveResponse;
+export declare namespace FeeRate {
+  export { type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 }

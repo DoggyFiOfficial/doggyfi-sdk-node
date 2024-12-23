@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as UtxosAPI from './utxos';
 
 export class Utxos extends APIResource {
   retrieve(
@@ -57,7 +56,6 @@ export interface UtxoRetrieveParams {
   cursor?: string;
 }
 
-export namespace Utxos {
-  export import UtxoRetrieveResponse = UtxosAPI.UtxoRetrieveResponse;
-  export import UtxoRetrieveParams = UtxosAPI.UtxoRetrieveParams;
+export declare namespace Utxos {
+  export { type UtxoRetrieveResponse as UtxoRetrieveResponse, type UtxoRetrieveParams as UtxoRetrieveParams };
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as TxAPI from './tx';
 
 export class Tx extends APIResource {
   retrieve(hash: string, options?: Core.RequestOptions): Core.APIPromise<TxRetrieveResponse> {
@@ -204,12 +203,14 @@ export interface TxSendDogeParams {
   feeRate?: number;
 }
 
-export namespace Tx {
-  export import TxRetrieveResponse = TxAPI.TxRetrieveResponse;
-  export import TxBuildResponse = TxAPI.TxBuildResponse;
-  export import TxPushResponse = TxAPI.TxPushResponse;
-  export import TxSendDogeResponse = TxAPI.TxSendDogeResponse;
-  export import TxBuildParams = TxAPI.TxBuildParams;
-  export import TxPushParams = TxAPI.TxPushParams;
-  export import TxSendDogeParams = TxAPI.TxSendDogeParams;
+export declare namespace Tx {
+  export {
+    type TxRetrieveResponse as TxRetrieveResponse,
+    type TxBuildResponse as TxBuildResponse,
+    type TxPushResponse as TxPushResponse,
+    type TxSendDogeResponse as TxSendDogeResponse,
+    type TxBuildParams as TxBuildParams,
+    type TxPushParams as TxPushParams,
+    type TxSendDogeParams as TxSendDogeParams,
+  };
 }

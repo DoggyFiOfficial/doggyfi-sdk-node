@@ -1,10 +1,26 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { BlockCountResponse, Blocks } from './resources/blocks';
+import { FeeRate, FeeRateRetrieveResponse } from './resources/fee-rate';
+import { TipRetrieveResponse, Tips } from './resources/tips';
+import {
+  Tx,
+  TxBuildParams,
+  TxBuildResponse,
+  TxPushParams,
+  TxPushResponse,
+  TxRetrieveResponse,
+  TxSendDogeParams,
+  TxSendDogeResponse,
+} from './resources/tx';
+import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
+import { Drc } from './resources/drc/drc';
+import { DuneSendParams, DuneSendResponse, Dunes } from './resources/dunes/dunes';
 
 export interface ClientOptions {
   /**
@@ -138,7 +154,7 @@ export class DoggyfiSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+export {
   DoggyfiSDKError,
   APIError,
   APIConnectionError,
@@ -152,38 +168,46 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
+} from './error';
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace DoggyfiSDK {
-  export import RequestOptions = Core.RequestOptions;
+DoggyfiSDK.Unspents = Unspents;
+DoggyfiSDK.Tx = Tx;
+DoggyfiSDK.Drc = Drc;
+DoggyfiSDK.Dunes = Dunes;
+DoggyfiSDK.Blocks = Blocks;
+DoggyfiSDK.FeeRate = FeeRate;
+DoggyfiSDK.Tips = Tips;
 
-  export import Unspents = API.Unspents;
-  export import UnspentRetrieveResponse = API.UnspentRetrieveResponse;
-  export import UnspentRetrieveParams = API.UnspentRetrieveParams;
+export declare namespace DoggyfiSDK {
+  export type RequestOptions = Core.RequestOptions;
 
-  export import Tx = API.Tx;
-  export import TxRetrieveResponse = API.TxRetrieveResponse;
-  export import TxBuildResponse = API.TxBuildResponse;
-  export import TxPushResponse = API.TxPushResponse;
-  export import TxSendDogeResponse = API.TxSendDogeResponse;
-  export import TxBuildParams = API.TxBuildParams;
-  export import TxPushParams = API.TxPushParams;
-  export import TxSendDogeParams = API.TxSendDogeParams;
+  export {
+    Unspents as Unspents,
+    type UnspentRetrieveResponse as UnspentRetrieveResponse,
+    type UnspentRetrieveParams as UnspentRetrieveParams,
+  };
 
-  export import Drc = API.Drc;
+  export {
+    Tx as Tx,
+    type TxRetrieveResponse as TxRetrieveResponse,
+    type TxBuildResponse as TxBuildResponse,
+    type TxPushResponse as TxPushResponse,
+    type TxSendDogeResponse as TxSendDogeResponse,
+    type TxBuildParams as TxBuildParams,
+    type TxPushParams as TxPushParams,
+    type TxSendDogeParams as TxSendDogeParams,
+  };
 
-  export import Dunes = API.Dunes;
-  export import DuneSendResponse = API.DuneSendResponse;
-  export import DuneSendParams = API.DuneSendParams;
+  export { Drc as Drc };
 
-  export import Blocks = API.Blocks;
-  export import BlockCountResponse = API.BlockCountResponse;
+  export { Dunes as Dunes, type DuneSendResponse as DuneSendResponse, type DuneSendParams as DuneSendParams };
 
-  export import FeeRate = API.FeeRate;
-  export import FeeRateRetrieveResponse = API.FeeRateRetrieveResponse;
+  export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
+
+  export { FeeRate as FeeRate, type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 
   export import Tips = API.Tips;
   export import TipRetrieveResponse = API.TipRetrieveResponse;

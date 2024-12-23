@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "packageManager": "bun@1.1.30",
   "files": [
-    "*"
+    "**/*"
   ],
   "private": false,
   "scripts": {

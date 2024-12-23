@@ -29,6 +29,7 @@ import {
   DuneSendResponse,
   Dunes,
 } from './resources/dunes/dunes';
+import * as Prices from './resources/prices';
 
 export interface ClientOptions {
   /**
@@ -202,6 +203,10 @@ export declare namespace DoggyfiSDK {
     type DuneOpenParams as DuneOpenParams,
     type DuneSendParams as DuneSendParams,
   };
+
+  export {
+    Prices as Prices,
+  }
 
   export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
 

@@ -7,6 +7,7 @@ import * as Uploads from './uploads';
 import * as API from './resources/index';
 import { BlockCountResponse, Blocks } from './resources/blocks';
 import { FeeRate, FeeRateRetrieveResponse } from './resources/fee-rate';
+import { PriceRetrieveResponse, Prices } from './resources/prices';
 import { TipRetrieveResponse, Tips } from './resources/tips';
 import {
   Tx,
@@ -19,8 +20,16 @@ import {
   TxSendDogeResponse,
 } from './resources/tx';
 import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
-import { Drc } from './resources/drc/drc';
-import { DuneSendParams, DuneSendResponse, Dunes } from './resources/dunes/dunes';
+import { Drc, DrcSendExactResponse } from './resources/drc/drc';
+import {
+  DuneMintParams,
+  DuneMintResponse,
+  DuneOpenParams,
+  DuneOpenResponse,
+  DuneSendParams,
+  DuneSendResponse,
+  Dunes,
+} from './resources/dunes/dunes';
 
 export interface ClientOptions {
   /**
@@ -121,6 +130,7 @@ export class DoggyfiSDK extends Core.APIClient {
   blocks: API.Blocks = new API.Blocks(this);
   feeRate: API.FeeRate = new API.FeeRate(this);
   tips: API.Tips = new API.Tips(this);
+  prices: API.Prices = new API.Prices(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -161,6 +171,7 @@ DoggyfiSDK.Dunes = Dunes;
 DoggyfiSDK.Blocks = Blocks;
 DoggyfiSDK.FeeRate = FeeRate;
 DoggyfiSDK.Tips = Tips;
+DoggyfiSDK.Prices = Prices;
 export declare namespace DoggyfiSDK {
   export type RequestOptions = Core.RequestOptions;
 
@@ -181,15 +192,25 @@ export declare namespace DoggyfiSDK {
     type TxSendDogeParams as TxSendDogeParams,
   };
 
-  export { Drc as Drc };
+  export { Drc as Drc, type DrcSendExactResponse as DrcSendExactResponse };
 
-  export { Dunes as Dunes, type DuneSendResponse as DuneSendResponse, type DuneSendParams as DuneSendParams };
+  export {
+    Dunes as Dunes,
+    type DuneMintResponse as DuneMintResponse,
+    type DuneOpenResponse as DuneOpenResponse,
+    type DuneSendResponse as DuneSendResponse,
+    type DuneMintParams as DuneMintParams,
+    type DuneOpenParams as DuneOpenParams,
+    type DuneSendParams as DuneSendParams,
+  };
 
   export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
 
   export { FeeRate as FeeRate, type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 
   export { Tips as Tips, type TipRetrieveResponse as TipRetrieveResponse };
+
+  export { Prices as Prices, type PriceRetrieveResponse as PriceRetrieveResponse };
 }
 
 export { toFile, fileFromPath } from './uploads';

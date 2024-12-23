@@ -1,14 +1,17 @@
 {
   "name": "doggyfi-sdk",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.4",
   "description": "The official TypeScript library for the Doggyfi SDK API",
   "author": "Doggyfi SDK <dev-feedback@doggyfi-sdk.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:DoggyFiOfficial/doggyfi-sdk-node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoggyFiOfficial/doggyfi-sdk-node.git"
+  },
   "license": "Apache-2.0",
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "bun@1.1.30",
   "files": [
     "**/*"
   ],
@@ -16,7 +19,7 @@
   "scripts": {
     "test": "./scripts/test",
     "build": "./scripts/build",
-    "prepublishOnly": "echo 'to publish, run yarn build && (cd dist; yarn publish)' && exit 1",
+    "prepublishOnly": "echo 'to publish, run bun run build && (cd dist; bun run publish)' && exit 1",
     "format": "prettier --write --cache --cache-strategy metadata . !dist",
     "prepare": "if ./scripts/utils/check-is-in-git-install.sh; then ./scripts/build; fi",
     "tsn": "ts-node -r tsconfig-paths/register",
@@ -28,9 +31,14 @@
     "@types/node-fetch": "^2.6.4",
     "abort-controller": "^3.0.0",
     "agentkeepalive": "^4.2.1",
+    "bip32": "^5.0.0-rc.0",
+    "bip39": "^3.1.0",
+    "bitcoinjs-lib": "^7.0.0-rc.0",
+    "ecpair": "^3.0.0-rc.0",
     "form-data-encoder": "1.7.2",
     "formdata-node": "^4.3.2",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "tiny-secp256k1": "^2.2.3"
   },
   "devDependencies": {
     "@swc/core": "^1.3.102",
@@ -48,7 +56,7 @@
     "ts-node": "^10.5.0",
     "tsc-multi": "^1.1.0",
     "tsconfig-paths": "^4.0.0",
-    "typescript": "^4.8.2"
+    "typescript": "^5.7.2"
   },
   "sideEffects": [
     "./_shims/index.js",
@@ -119,5 +127,13 @@
       "require": "./dist/*.js",
       "default": "./dist/*.mjs"
     }
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues"
+  },
+  "homepage": "https://github.com/DoggyFiOfficial/doggyfi-sdk-node#readme"
 }

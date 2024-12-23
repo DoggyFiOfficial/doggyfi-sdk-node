@@ -204,9 +204,7 @@ export declare namespace DoggyfiSDK {
     type DuneSendParams as DuneSendParams,
   };
 
-  export {
-    Prices as Prices,
-  }
+  export { Prices as Prices };
 
   export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
 

@@ -111,7 +111,7 @@ export interface DuneOpenParams {
   /**
    * The number of decimal places that the dune can be divided into.
    */
-  divisibility?: number | null;
+  divisibility: number | null;
 
   /**
    * The block height at which the dune will stop minting.

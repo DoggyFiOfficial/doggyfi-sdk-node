@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2024-12-23)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Chores
+
+* **internal:** version bump ([#20](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/20)) ([2183177](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/21831776be5972007e10647b6912320fdfd668aa))
+* remove redundant word in comment ([#18](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/18)) ([bdd478e](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/bdd478eef547b5ffe122248fc854b0013426b075))
+
+
+### Documentation
+
+* remove suggestion to use `npm` call out ([#17](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/17)) ([7821a9e](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/7821a9efed28a2d0d4d1bd275de0fc09188f9192))
+
 ## 0.1.0-alpha.4 (2024-12-23)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)

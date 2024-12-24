@@ -24,8 +24,9 @@ const dogecoinNetwork = {
  */
 export async function signerTXAndSign(
   ECPair: ECPairAPI,
-  txBase64: string,
+  txString: string,
   walletWif: string,
+  txStringIsBase64: boolean = true,
 ): Promise<String> {
   try {
     const signingWallet = createSigner(ECPair, walletWif);
@@ -34,13 +35,20 @@ export async function signerTXAndSign(
       throw Error(`Failed to create signer from WIF: ${signingWallet.error}`);
     }
 
-    if (!txBase64 || txBase64.length === 0) {
-      throw Error(`Invalid transaction ${txBase64}`);
+    if (!txString || txString.length === 0) {
+      throw Error(`Invalid transaction ${txString}`);
     }
 
-    const psbt = bitcoin.Psbt.fromBase64(txBase64, {
-      network: dogecoinNetwork,
-    });
+    let psbt: bitcoin.Psbt;
+    if (txStringIsBase64) {
+      psbt = bitcoin.Psbt.fromBase64(txString, {
+        network: dogecoinNetwork,
+      });
+    } else {
+      psbt = bitcoin.Psbt.fromHex(txString, {
+        network: dogecoinNetwork,
+      });
+    }
 
     const signedTxHex = psbt.signAllInputs(signingWallet);
 

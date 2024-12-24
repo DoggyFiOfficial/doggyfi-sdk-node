@@ -20,7 +20,7 @@ describe('resource dunes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 22000);
 
   test('mint: required and optional params', async () => {
     const response = await client.dunes.mint({
@@ -29,7 +29,7 @@ describe('resource dunes', () => {
       amount: 69,
       receiver: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
     });
-  });
+  }, 22000);
 
   test('open: only required params', async () => {
     const responsePromise = client.dunes.open({

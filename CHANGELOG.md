@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2024-12-24)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Features
+
+* increases timeout on mintDunes cases ([21c8641](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/21c8641c7f88462ecc13f39011da8e3958d40e34))
+* makes changes to support mint/open dunes signing + adds examples ([3a4b875](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/3a4b875a3b728bc045038e5022eda9b29c075ff5))
+
 ## 0.1.0-alpha.7 (2024-12-23)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)

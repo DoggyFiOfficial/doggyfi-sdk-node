@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-01-02)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Chores
+
+* **internal:** codegen related update ([#65](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/65)) ([fa2090e](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/fa2090e640e8cd19e6e4d7f8fb63b0dbd3aaea13))
+
 ## 0.1.0-alpha.8 (2024-12-24)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)

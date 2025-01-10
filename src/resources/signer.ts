@@ -1,5 +1,10 @@
-import { ECPairAPI, ECPairInterface } from 'ecpair';
+import { ECPairInterface } from 'ecpair';
 import * as bitcoin from 'bitcoinjs-lib';
+
+import { ECPairFactory } from 'ecpair';
+import ecc from '@bitcoinerlab/secp256k1';
+
+const ECPair = ECPairFactory(ecc);
 
 // Dogecoin network parameters
 const dogecoinNetwork = {
@@ -23,13 +28,12 @@ const dogecoinNetwork = {
  * @returns
  */
 export async function signerTXAndSign(
-  ECPair: ECPairAPI,
   txString: string,
   walletWif: string,
   txStringIsBase64: boolean = true,
-): Promise<String> {
+): Promise<string> {
   try {
-    const signingWallet = createSigner(ECPair, walletWif);
+    const signingWallet = createSigner(walletWif);
 
     if ('error' in signingWallet) {
       throw Error(`Failed to create signer from WIF: ${signingWallet.error}`);
@@ -66,7 +70,7 @@ export async function signerTXAndSign(
  * @param wifString
  * @returns
  */
-function createSigner(ECPair: ECPairAPI, wifString: string): ECPairInterface {
+export function createSigner(wifString: string): ECPairInterface {
   try {
     const keyPair = ECPair.fromWIF(wifString, dogecoinNetwork);
     return keyPair;

@@ -1,43 +1,42 @@
 // example of building a transaction and pushing it.
 // NEVER USE THIS IN PRODUCTION, YOU SHOULD NEVER STORE A SEED PHRASE IN A REAL APP.
 // YOU SHOULD SECURLY PASS THE SEED PHRASE FROM THE WALLET DIRECTLY.
-import ECPairFactory from 'ecpair';
-import DoggyfiSDK from 'doggyfi-sdk';
-import * as ecc from 'tiny-secp256k1';
+import DoggyfiSDK from '..';
 
-const ECPair = ECPairFactory(ecc);
 const APIclient = new DoggyfiSDK({ baseURL: 'https://api.doggyfi.xyz/' });
-const PHRASE = 'YOUR SEED PHRASE HERE';
-const yourAddress = 'YOUR ADDRESS HERE';
-const yourAddressAccount = 0; // assumes you are using m/44'/3'/0'/0/0, if you are using a different derivation path, you will need to change this.
-const sendAddress = 'AN ADDRESS YOU WANT TO SEND TO';
+const PHRASE = '12 OR 24 WORD SEED PHRASE';
+const accountPath = 1;
 
 async function main() {
-  // get unspents (NOTE YOU MAY NEED TO PAGINATE, LOOK AT UNSPENTS.UNSPENTS.NEXT_CURSOR)
-  let unspents = await APIclient.unspents.retrieve(yourAddress);
+  const wif = await APIclient.wifGenerator(PHRASE, `m/44'/3'/0'/0/${accountPath}`); // get account on default path
+  const address = APIclient.getAddress(wif.privkey);
+  console.log('The address I got for you is', address);
+
+  let unspents = await APIclient.unspents.retrieve(address);
   // make sure is not error type
   if ('error' in unspents) {
     throw new Error(JSON.stringify(unspents));
   }
 
-  // Obsviously you might want to filter differently than this...(purely for example purposes)
-  if (unspents.unspents[0] === undefined) {
-    throw new Error('No unspents found');
-  }
-  const filteredUnspents = [unspents.unspents[0]];
-  const value = unspents.unspents[0].value;
+  console.log(unspents.unspents);
+  const totalValue = unspents.unspents.reduce((acc, curr) => {
+    return acc + Number(curr.value);
+  }, 0);
+
+  console.log('Total Value:', totalValue);
 
   // fee rate based on inputs and outputs
   const feeRate = await APIclient.feeRate.retrieve();
-  const txFee = DoggyfiSDK.getTxFee(filteredUnspents.length, 2, feeRate.feeRate);
 
-  if (txFee > Number(value)) {
+  const txFee = APIclient.getTxFee(unspents.unspents.length, 2, feeRate.feeRate); // can also access with getTxFee
+
+  if (txFee > totalValue) {
     throw new Error('Not enough funds to send tx');
   }
 
   // build params needed for buildTX
   const params: DoggyfiSDK.Tx.TxBuildParams = {
-    inputs: filteredUnspents.map((unspent) => {
+    inputs: unspents.unspents.map((unspent) => {
       return {
         txid: unspent.hash,
         vout: unspent.vout_index,
@@ -45,12 +44,8 @@ async function main() {
     }),
     outputs: [
       {
-        address: sendAddress,
-        satoshis: 100_000,
-      },
-      {
-        address: yourAddress,
-        satoshis: Number(value) - txFee,
+        address: address,
+        satoshis: Number(totalValue) - txFee,
       },
     ],
   };
@@ -65,16 +60,13 @@ async function main() {
     throw Error(JSON.stringify(tx.error));
   }
 
-  // makes wif on dogecoin network
-  const walletWif = await DoggyfiSDK.makeWif(PHRASE, yourAddressAccount);
-
-  // sign tx
-  const signedTx = await DoggyfiSDK.signerTXAndSign(ECPair, tx.psbtHex, walletWif);
-  console.log(signedTx);
+  // sign tx (note our default tx builder for sending doge returns base64, so last arg is true)
+  const signedTx = await APIclient.signer(tx.psbtHex, wif.privkey, true);
+  console.log('The signed tx is: ', signedTx);
   // push tx
   // I have commented this out in the example, if you actually intend to push, uncomment this.
-  // const pushedTx = await APIclient.tx.push(signedTx);
-  // console.log(pushedTx);
+  const pushedTx = await APIclient.tx.push(signedTx);
+  console.log('The pushed hash is: ', pushedTx);
 }
 
 // @ts-ignore

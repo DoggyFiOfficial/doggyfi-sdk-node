@@ -30,6 +30,9 @@ import {
   Dunes,
 } from './resources/dunes/dunes';
 import * as Prices from './resources/prices';
+import * as Signer from './resources/signer';
+import * as AddressGen from './resources/getAddress';
+import { getTxFee } from './resources';
 
 export interface ClientOptions {
   /**
@@ -132,6 +135,31 @@ export class DoggyfiSDK extends Core.APIClient {
   tips: API.Tips = new API.Tips(this);
   prices: API.Prices = new API.Prices(this);
 
+  // wrappers for tx helper methods...
+  public static signer = Signer.signerTXAndSign;
+  public static wifGenerator = AddressGen.makeWif;
+
+  get signer() {
+    return DoggyfiSDK.signer;
+  }
+  get wifGenerator() {
+    return DoggyfiSDK.wifGenerator;
+  }
+
+  // helper to compute fees
+  public static getTxFee = getTxFee;
+
+  get getTxFee() {
+    return DoggyfiSDK.getTxFee;
+  }
+
+  // helper to get address
+  public static getAddress = AddressGen.getAddress;
+
+  get getAddress() {
+    return DoggyfiSDK.getAddress;
+  }
+
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
   }
@@ -172,6 +200,7 @@ DoggyfiSDK.Blocks = Blocks;
 DoggyfiSDK.FeeRate = FeeRate;
 DoggyfiSDK.Tips = Tips;
 DoggyfiSDK.Prices = Prices;
+
 export declare namespace DoggyfiSDK {
   export type RequestOptions = Core.RequestOptions;
 
@@ -213,15 +242,7 @@ export declare namespace DoggyfiSDK {
   export import Tips = API.Tips;
   export type TipRetrieveResponse = API.TipRetrieveResponse;
 
-  // Note while signerTXAndSign and makeWif are not part of the API, they are exported for convenience.
-  // you can verify for yourself by inspect makeWif.ts and signer.ts under resources.
-  // They run completely locally on the client side. They are never sent to the server.
-  export import signerTXAndSign = API.signerTXAndSign;
-  export import makeWif = API.makeWif;
-  ////////////////////////////////////////////////////////////////////////////////////
-
   export import dogecoinNetwork = API.dogecoinNetwork;
-  export import getTxFee = API.getTxFee;
 }
 
 export { toFile, fileFromPath } from './uploads';

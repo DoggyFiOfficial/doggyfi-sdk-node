@@ -430,6 +430,7 @@ export abstract class APIClient {
     }
 
     const controller = new AbortController();
+
     const response = await this.fetchWithTimeout(url, req, timeout, controller).catch(castToError);
 
     if (response instanceof Error) {

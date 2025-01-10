@@ -15,8 +15,8 @@ export class Tx extends APIResource {
   push(body: TxPushParams, options?: Core.RequestOptions): Core.APIPromise<TxPushResponse> {
     return this._client.post('/tx/push', {
       body,
-      ...options,
-      headers: { 'Content-Type': 'text/plain', ...options?.headers },
+      headers: { 'Content-Type': 'text/plain' },
+      __binaryRequest: true,
     });
   }
 

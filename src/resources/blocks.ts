@@ -8,7 +8,10 @@ export class Blocks extends APIResource {
    * Get the current block height
    */
   count(options?: Core.RequestOptions): Core.APIPromise<BlockCountResponse> {
-    return this._client.get('/blocks/count', options);
+    return this._client.get('/blocks/count', {
+      ...options,
+      headers: { Accept: 'text/plain', ...options?.headers },
+    });
   }
 }
 

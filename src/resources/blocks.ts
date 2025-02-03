@@ -7,7 +7,7 @@ export class Blocks extends APIResource {
   /**
    * Get the current block height
    */
-  count(options?: Core.RequestOptions): Core.APIPromise<BlockCountResponse> {
+  count(options?: Core.RequestOptions): Core.APIPromise<string> {
     return this._client.get('/blocks/count', {
       ...options,
       headers: { Accept: 'text/plain', ...options?.headers },
@@ -18,7 +18,7 @@ export class Blocks extends APIResource {
 /**
  * Current block height
  */
-export type BlockCountResponse = number;
+export type BlockCountResponse = string;
 
 export declare namespace Blocks {
   export { type BlockCountResponse as BlockCountResponse };

@@ -106,7 +106,7 @@ Types:
 
 Methods:
 
-- <code title="get /blocks/count">client.blocks.<a href="./src/resources/blocks.ts">count</a>() -> BlockCountResponse</code>
+- <code title="get /blocks/count">client.blocks.<a href="./src/resources/blocks.ts">count</a>() -> string</code>
 
 # FeeRate
 

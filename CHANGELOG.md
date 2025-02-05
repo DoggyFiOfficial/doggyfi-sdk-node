@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-02-05)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** api update ([#73](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/73)) ([e500695](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/e500695130a23137430607a9cf097adbd52fbaee))
+* **client:** send `X-Stainless-Timeout` header ([#74](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/74)) ([6252c29](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/6252c292dc1b53c09f35263f1e9c36b0cf0c40be))
+
+
+### Chores
+
+* **internal:** add test ([#72](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/72)) ([00faeab](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/00faeab98f36cd819cd96ad0fd8db022d3f1001c))
+* **internal:** codegen related update ([#69](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/69)) ([48d2902](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/48d29021e4439083d7516b3ab030045b008b6aad))
+* **internal:** codegen related update ([#71](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/71)) ([173fd50](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/173fd50bcf4becdf59aeae294823177a3e0639e6))
+
 ## 0.1.0-alpha.9 (2025-01-10)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)

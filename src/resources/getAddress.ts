@@ -56,7 +56,7 @@ export const makeWif = async (
 
   // Get the private key in WIF format for Dogecoin
   // Dogecoin uses different version bytes for WIF
-  const wif = ECPair.fromPrivateKey(childNode.privateKey!, { network }).toWIF();
+  const wif = ECPair.fromPrivateKey(Buffer.from(childNode.privateKey!), { network }).toWIF();
   const address = bitcoin.payments.p2pkh({ pubkey: childNode.publicKey, network }).address;
 
   if (!address) throw new Error('No address found');

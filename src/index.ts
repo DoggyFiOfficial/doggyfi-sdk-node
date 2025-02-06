@@ -17,7 +17,7 @@ import {
   TxRetrieveResponse,
   TxSendDogeParams,
   TxSendDogeResponse,
-} from './resources/tx';
+} from './resources/tx/tx';
 import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
 import { Drc, DrcSendExactResponse } from './resources/drc/drc';
 import {

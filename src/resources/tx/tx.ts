@@ -1,9 +1,13 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as PsbtAPI from './psbt';
+import { Psbt, PsbtDecodeParams, PsbtDecodeResponse } from './psbt';
 
 export class Tx extends APIResource {
+  psbt: PsbtAPI.Psbt = new PsbtAPI.Psbt(this._client);
+
   retrieve(hash: string, options?: Core.RequestOptions): Core.APIPromise<TxRetrieveResponse> {
     return this._client.get(`/tx/${hash}`, options);
   }
@@ -201,6 +205,8 @@ export interface TxSendDogeParams {
   feeRate?: number;
 }
 
+Tx.Psbt = Psbt;
+
 export declare namespace Tx {
   export {
     type TxRetrieveResponse as TxRetrieveResponse,
@@ -210,5 +216,11 @@ export declare namespace Tx {
     type TxBuildParams as TxBuildParams,
     type TxPushParams as TxPushParams,
     type TxSendDogeParams as TxSendDogeParams,
+  };
+
+  export {
+    Psbt as Psbt,
+    type PsbtDecodeResponse as PsbtDecodeResponse,
+    type PsbtDecodeParams as PsbtDecodeParams,
   };
 }

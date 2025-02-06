@@ -95,9 +95,9 @@ export namespace TxRetrieveResponse {
 
 export interface TxBuildResponse {
   /**
-   * Hex encoded PSBT
+   * Base64 encoded PSBT
    */
-  psbtHex: string;
+  psbtBase64: string;
 
   /**
    * Fee rate in satoshis per byte

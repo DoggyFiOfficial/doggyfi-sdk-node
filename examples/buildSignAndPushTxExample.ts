@@ -1,7 +1,7 @@
 // example of building a transaction and pushing it.
 // NEVER USE THIS IN PRODUCTION, YOU SHOULD NEVER STORE A SEED PHRASE IN A REAL APP.
 // YOU SHOULD SECURLY PASS THE SEED PHRASE FROM THE WALLET DIRECTLY.
-import DoggyfiSDK from '..';
+import DoggyfiSDK from 'doggyfi-sdk'; // note this is meant to be run in an enviroment where you install doggyfi-sdk in node modules...
 
 const APIclient = new DoggyfiSDK({ baseURL: 'https://api.doggyfi.xyz/' });
 const PHRASE = '12 OR 24 WORD SEED PHRASE';
@@ -19,7 +19,7 @@ async function main() {
   }
 
   console.log(unspents.unspents);
-  const totalValue = unspents.unspents.reduce((acc, curr) => {
+  const totalValue = unspents.unspents.reduce((acc: number, curr: (typeof unspents.unspents)[0]) => {
     return acc + Number(curr.value);
   }, 0);
 
@@ -36,7 +36,7 @@ async function main() {
 
   // build params needed for buildTX
   const params: DoggyfiSDK.Tx.TxBuildParams = {
-    inputs: unspents.unspents.map((unspent) => {
+    inputs: unspents.unspents.map((unspent: (typeof unspents.unspents)[0]) => {
       return {
         txid: unspent.hash,
         vout: unspent.vout_index,
@@ -61,12 +61,12 @@ async function main() {
   }
 
   // sign tx (note our default tx builder for sending doge returns base64, so last arg is true)
-  const signedTx = await APIclient.signer(tx.psbtHex, wif.privkey, true);
+  const signedTx = await APIclient.signer(tx.psbtBase64, wif.privkey, true);
   console.log('The signed tx is: ', signedTx);
   // push tx
   // I have commented this out in the example, if you actually intend to push, uncomment this.
-  const pushedTx = await APIclient.tx.push(signedTx);
-  console.log('The pushed hash is: ', pushedTx);
+  // const pushedTx = await APIclient.tx.push(signedTx);
+  // console.log('The pushed hash is: ', pushedTx);
 }
 
 // @ts-ignore

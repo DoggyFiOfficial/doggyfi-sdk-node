@@ -9,16 +9,6 @@ import { BlockCountResponse, Blocks } from './resources/blocks';
 import { FeeRate, FeeRateRetrieveResponse } from './resources/fee-rate';
 import { PriceRetrieveResponse, Prices } from './resources/prices';
 import { TipRetrieveResponse, Tips } from './resources/tips';
-import {
-  Tx,
-  TxBuildParams,
-  TxBuildResponse,
-  TxPushParams,
-  TxPushResponse,
-  TxRetrieveResponse,
-  TxSendDogeParams,
-  TxSendDogeResponse,
-} from './resources/tx';
 import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
 import { Drc, DrcSendExactResponse } from './resources/drc/drc';
 import {
@@ -30,6 +20,16 @@ import {
   DuneSendResponse,
   Dunes,
 } from './resources/dunes/dunes';
+import {
+  Tx,
+  TxBuildParams,
+  TxBuildResponse,
+  TxPushParams,
+  TxPushResponse,
+  TxRetrieveResponse,
+  TxSendDogeParams,
+  TxSendDogeResponse,
+} from './resources/tx/tx';
 
 export interface ClientOptions {
   /**

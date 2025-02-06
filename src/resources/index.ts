@@ -23,5 +23,5 @@ export {
   type TxBuildParams,
   type TxPushParams,
   type TxSendDogeParams,
-} from './tx';
+} from './tx/tx';
 export { Unspents, type UnspentRetrieveResponse, type UnspentRetrieveParams } from './unspents';

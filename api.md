@@ -12,17 +12,27 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/tx.ts">TxRetrieveResponse</a></code>
-- <code><a href="./src/resources/tx.ts">TxBuildResponse</a></code>
-- <code><a href="./src/resources/tx.ts">TxPushResponse</a></code>
-- <code><a href="./src/resources/tx.ts">TxSendDogeResponse</a></code>
+- <code><a href="./src/resources/tx/tx.ts">TxRetrieveResponse</a></code>
+- <code><a href="./src/resources/tx/tx.ts">TxBuildResponse</a></code>
+- <code><a href="./src/resources/tx/tx.ts">TxPushResponse</a></code>
+- <code><a href="./src/resources/tx/tx.ts">TxSendDogeResponse</a></code>
 
 Methods:
 
-- <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
-- <code title="post /tx/build">client.tx.<a href="./src/resources/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
-- <code title="post /tx/push">client.tx.<a href="./src/resources/tx.ts">push</a>({ ...params }) -> TxPushResponse</code>
-- <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
+- <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
+- <code title="post /tx/build">client.tx.<a href="./src/resources/tx/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
+- <code title="post /tx/push">client.tx.<a href="./src/resources/tx/tx.ts">push</a>({ ...params }) -> TxPushResponse</code>
+- <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
+
+## Psbt
+
+Types:
+
+- <code><a href="./src/resources/tx/psbt.ts">PsbtDecodeResponse</a></code>
+
+Methods:
+
+- <code title="post /tx/psbt/decode">client.tx.psbt.<a href="./src/resources/tx/psbt.ts">decode</a>({ ...params }) -> PsbtDecodeResponse</code>
 
 # Drc
 

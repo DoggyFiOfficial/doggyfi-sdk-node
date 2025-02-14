@@ -23,7 +23,7 @@ export {
   type TxBuildParams,
   type TxPushParams,
   type TxSendDogeParams,
-} from './tx';
+} from './tx/tx';
 export { UnspentRetrieveResponse, UnspentRetrieveParams, Unspents } from './unspents';
 export { dogecoinNetwork } from './dogecoinNetwork';
 export { getTxFee } from './feeRate';

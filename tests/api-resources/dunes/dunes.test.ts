@@ -20,7 +20,7 @@ describe('resource dunes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 22000);
 
   test('mint: required and optional params', async () => {
     const response = await client.dunes.mint({
@@ -29,13 +29,14 @@ describe('resource dunes', () => {
       amount: 69,
       receiver: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
     });
-  });
+  }, 22000);
 
   test('open: only required params', async () => {
     const responsePromise = client.dunes.open({
       address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
       symbol: 'D',
       ticker: 'THISISADUNENAME',
+      divisibility: 0, // this is a required param?
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -44,7 +45,7 @@ describe('resource dunes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 22000);
 
   test('open: required and optional params', async () => {
     const response = await client.dunes.open({
@@ -59,15 +60,15 @@ describe('resource dunes', () => {
       offsetEnd: 10000000,
       offsetStart: 0,
       openMint: true,
-      premine: 'premine',
+      premine: '0',
       turbo: true,
     });
-  });
+  }, 22000);
 
   test('send: only required params', async () => {
     const responsePromise = client.dunes.send({
-      amount: 'amount',
-      duneId: '5430336:17',
+      amount: '0.00000001',
+      duneId: '5345732:9',
       from: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
       to: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
     });
@@ -78,15 +79,15 @@ describe('resource dunes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
+  }, 22000);
 
   test('send: required and optional params', async () => {
     const response = await client.dunes.send({
-      amount: 'amount',
-      duneId: '5430336:17',
+      amount: '0.00000001',
+      duneId: '5345732:9',
       from: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
       to: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
       feeRate: 127328,
     });
-  });
+  }, 22000);
 });

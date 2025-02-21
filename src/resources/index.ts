@@ -24,4 +24,7 @@ export {
   type TxPushParams,
   type TxSendDogeParams,
 } from './tx/tx';
-export { Unspents, type UnspentRetrieveResponse, type UnspentRetrieveParams } from './unspents';
+export { UnspentRetrieveResponse, UnspentRetrieveParams, Unspents } from './unspents';
+export { dogecoinNetwork } from './dogecoinNetwork';
+export { getTxFee } from './feeRate';
+export { getAddress } from './getAddress';

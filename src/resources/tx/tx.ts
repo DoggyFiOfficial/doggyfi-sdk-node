@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as PsbtAPI from './psbt';
 import { Psbt, PsbtDecodeParams, PsbtDecodeResponse } from './psbt';
@@ -16,7 +17,15 @@ export class Tx extends APIResource {
     return this._client.post('/tx/build', { body, ...options });
   }
 
-  push(body: TxPushParams, options?: Core.RequestOptions): Core.APIPromise<TxPushResponse> {
+  push(body?: TxPushParams, options?: Core.RequestOptions): Core.APIPromise<TxPushResponse>;
+  push(options?: Core.RequestOptions): Core.APIPromise<TxPushResponse>;
+  push(
+    body?: TxPushParams | Core.RequestOptions,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<TxPushResponse> {
+    if (isRequestOptions(body)) {
+      return this.push(undefined, body);
+    }
     return this._client.post('/tx/push', {
       body,
       ...options,

@@ -6,7 +6,7 @@ This library provides convenient access to the Doggyfi SDK REST API from server-
 
 The REST API documentation can be found on [docs.doggyfi-sdk.com](https://docs.doggyfi-sdk.com). The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainlessapi.com/).
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 ```sh
@@ -20,7 +20,7 @@ bun install doggyfi-sdk
 WE STRONGLY RECOMMEND INSTALLING WITH BUN, AND USING BUN FOR ALL PACKAGE MANAGEMENT.
 
 > [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`
+> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install doggyfi-sdk`
 
 ## Setting up your environment
 The library requires you to include a variable called 'DOGGYFI_SDK_BASE_URL' in your `process.env`.

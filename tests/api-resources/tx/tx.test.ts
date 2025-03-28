@@ -75,7 +75,6 @@ describe('resource tx', () => {
     );
   });
 
-
   test('sendDoge: only required params', async () => {
     const responsePromise = client.tx.sendDoge({
       amount: 37.214,

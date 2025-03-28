@@ -7,8 +7,17 @@ import * as Uploads from './uploads';
 import * as API from './resources/index';
 import { BlockCountResponse, Blocks } from './resources/blocks';
 import { FeeRate, FeeRateRetrieveResponse } from './resources/fee-rate';
-import { PriceRetrieveResponse, Prices } from './resources/prices';
-import { TipRetrieveResponse, Tips } from './resources/tips';
+import { Tips } from './resources/tips';
+import {
+  Tx,
+  TxBuildParams,
+  TxBuildResponse,
+  TxPushParams,
+  TxPushResponse,
+  TxRetrieveResponse,
+  TxSendDogeParams,
+  TxSendDogeResponse,
+} from './resources/tx/tx';
 import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
 import { Drc, DrcSendExactResponse } from './resources/drc/drc';
 import {
@@ -20,16 +29,10 @@ import {
   DuneSendResponse,
   Dunes,
 } from './resources/dunes/dunes';
-import {
-  Tx,
-  TxBuildParams,
-  TxBuildResponse,
-  TxPushParams,
-  TxPushResponse,
-  TxRetrieveResponse,
-  TxSendDogeParams,
-  TxSendDogeResponse,
-} from './resources/tx/tx';
+import * as Prices from './resources/prices';
+import * as Signer from './resources/signer';
+import * as AddressGen from './resources/getAddress';
+import { getTxFee } from './resources';
 
 export interface ClientOptions {
   /**
@@ -132,6 +135,31 @@ export class DoggyfiSDK extends Core.APIClient {
   tips: API.Tips = new API.Tips(this);
   prices: API.Prices = new API.Prices(this);
 
+  // wrappers for tx helper methods...
+  public static signer = Signer.signerTXAndSign;
+  public static wifGenerator = AddressGen.makeWif;
+
+  get signer() {
+    return DoggyfiSDK.signer;
+  }
+  get wifGenerator() {
+    return DoggyfiSDK.wifGenerator;
+  }
+
+  // helper to compute fees
+  public static getTxFee = getTxFee;
+
+  get getTxFee() {
+    return DoggyfiSDK.getTxFee;
+  }
+
+  // helper to get address
+  public static getAddress = AddressGen.getAddress;
+
+  get getAddress() {
+    return DoggyfiSDK.getAddress;
+  }
+
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
   }
@@ -172,6 +200,7 @@ DoggyfiSDK.Blocks = Blocks;
 DoggyfiSDK.FeeRate = FeeRate;
 DoggyfiSDK.Tips = Tips;
 DoggyfiSDK.Prices = Prices;
+
 export declare namespace DoggyfiSDK {
   export type RequestOptions = Core.RequestOptions;
 
@@ -204,13 +233,16 @@ export declare namespace DoggyfiSDK {
     type DuneSendParams as DuneSendParams,
   };
 
+  export { Prices as Prices };
+
   export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
 
   export { FeeRate as FeeRate, type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 
-  export { Tips as Tips, type TipRetrieveResponse as TipRetrieveResponse };
+  export import Tips = API.Tips;
+  export type TipRetrieveResponse = API.TipRetrieveResponse;
 
-  export { Prices as Prices, type PriceRetrieveResponse as PriceRetrieveResponse };
+  export import dogecoinNetwork = API.dogecoinNetwork;
 }
 
 export { toFile, fileFromPath } from './uploads';

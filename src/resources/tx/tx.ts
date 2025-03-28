@@ -28,8 +28,8 @@ export class Tx extends APIResource {
     }
     return this._client.post('/tx/push', {
       body,
-      ...options,
-      headers: { 'Content-Type': 'text/plain', ...options?.headers },
+      headers: { 'Content-Type': 'text/plain' },
+      __binaryRequest: true,
     });
   }
 

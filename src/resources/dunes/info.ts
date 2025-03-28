@@ -15,6 +15,8 @@ export class Info extends APIResource {
 export interface InfoRetrieveResponse {
   id: string;
 
+  circulating_supply: string;
+
   divisibility: number | null;
 
   etching_cenotaph: boolean;
@@ -34,8 +36,6 @@ export interface InfoRetrieveResponse {
   symbol: string | null;
 
   terms: InfoRetrieveResponse.Terms;
-
-  total_utxos: number;
 
   unique_holders: number;
 }

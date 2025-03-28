@@ -1,6 +1,6 @@
 {
   "name": "doggyfi-sdk",
-  "version": "0.1.0-alpha.11",
+  "version": "0.1.0-alpha.12",
   "description": "The official TypeScript library for the Doggyfi SDK API",
   "author": "Doggyfi SDK <dev-feedback@doggyfi-sdk.com>",
   "types": "dist/index.d.ts",

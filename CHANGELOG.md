@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-03-28)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#86](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/86)) ([3b19b4f](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/3b19b4f86da50d75e4e36b9607f0f40349597d23))
+* **api:** api update ([#94](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/94)) ([444ccd4](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/444ccd44e599fce6d695e3a5edf8fb13658b52a2))
+* **api:** manual updates ([#79](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/79)) ([608becf](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/608becf9f19f0f835bbbfeafc4e6c4c4c4b53986))
+* **client:** accept RFC6838 JSON content types ([#87](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/87)) ([ae4f9d2](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/ae4f9d2d642711834b159df7f8d4e1341ad2f4d3))
+
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#92](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/92)) ([bc4b6e6](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/bc4b6e6261e23691cc5e88535508ca1514285bcd))
+* **client:** fix export map for index exports ([#81](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/81)) ([acfcf26](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/acfcf26d2fd544cb4616b31cb312e9f285c2dbca))
+* **client:** mark some request bodies as optional ([#82](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/82)) ([5656ef0](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/5656ef08e468f43ac5147f3384a11d3e1d0253ba))
+* **exports:** ensure resource imports don't require /index ([#89](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/89)) ([b8cc9a9](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/b8cc9a9be5d5eab4526169250c3653749bd34696))
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#93](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/93)) ([30c5552](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/30c55529ccf88b3982ad1c8326ee3c44bab97291))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#90](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/90)) ([40eb8a7](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/40eb8a7accd0fd9a73a489d4aadf3e1fa3077983))
+* **exports:** stop using path fallbacks ([#91](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/91)) ([5b4f034](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/5b4f034a44d4b8bde4387047aec8867090530e64))
+* **internal:** codegen related update ([#85](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/85)) ([31e221e](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/31e221e170ecd917f0b0c62e44a145e68b7e810c))
+* **internal:** fix devcontainers setup ([#84](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/84)) ([8e9c27d](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/8e9c27d11b6331bf0a5dae0d2131b41bcbcd5062))
+* **internal:** remove extra empty newlines ([#88](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/88)) ([9aeb564](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/9aeb5643a5c1df60f82177d2231967a1c680ccfb))
+
 ## 0.1.0-alpha.11 (2025-02-06)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)

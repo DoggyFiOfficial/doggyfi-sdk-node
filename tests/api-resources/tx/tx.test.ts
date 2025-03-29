@@ -50,22 +50,30 @@ describe('resource tx', () => {
     });
   });
 
-  // bump
-  //   test('push', async () => {
-  //     const responsePromise = client.tx.push();
-  //     const rawResponse = await responsePromise.asResponse();
-  //     expect(rawResponse).toBeInstanceOf(Response);
-  //     const response = await responsePromise;
-  //     expect(response).not.toBeInstanceOf(Response);
-  //     const dataAndResponse = await responsePromise.withResponse();
-  //     expect(dataAndResponse.data).toBe(response);
-  //     expect(dataAndResponse.response).toBe(rawResponse);
-  //   });
+  test('push', async () => {
+    const responsePromise = client.tx.push();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
 
-  // can't test push b/c not real tx
-  // test('push: required and optional params', async () => {
-  //   const response = await client.tx.push('body');
-  // });
+  test('push: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.tx.push({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      DoggyfiSDK.NotFoundError,
+    );
+  });
+
+  test('push: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.tx.push('body', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      DoggyfiSDK.NotFoundError,
+    );
+  });
 
   test('sendDoge: only required params', async () => {
     const responsePromise = client.tx.sendDoge({

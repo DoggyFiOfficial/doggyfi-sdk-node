@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-04-05)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#99](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/99)) ([3626987](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/3626987beb9ad3b0191af6d2d485e55c30d44b9d))
+* **client:** send `X-Stainless-Timeout` in seconds ([#96](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/96)) ([50787c2](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/50787c2f60e7fecd976412c4b559c5e61e987fdb))
+* **mcp:** remove unused tools.ts ([#100](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/100)) ([67aa33c](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/67aa33cd71b63eefaf1246aa52fc559715e2c5e4))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#98](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/issues/98)) ([b5b7ebd](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/commit/b5b7ebdf33dfc0062d77711101ed59672dc5b36c))
+
 ## 0.1.0-alpha.12 (2025-03-28)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/DoggyFiOfficial/doggyfi-sdk-node/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)

@@ -22,7 +22,7 @@ export interface InfoRetrieveResponse {
 
   etching_tx: string;
 
-  max_supply: string | unknown;
+  max_supply: string;
 
   mints: number;
 
@@ -39,17 +39,17 @@ export interface InfoRetrieveResponse {
 
 export namespace InfoRetrieveResponse {
   export interface Terms {
-    amount_per_mint: string | unknown;
+    amount_per_mint: string;
 
-    end_height: string | unknown;
+    end_height: string;
 
-    end_offset: string | unknown;
+    end_offset: string;
 
-    mint_txs_cap: string | unknown;
+    mint_txs_cap: string;
 
-    start_height: string | unknown;
+    start_height: string;
 
-    start_offset: string | unknown;
+    start_offset: string;
   }
 }
 

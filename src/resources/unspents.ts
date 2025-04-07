@@ -28,7 +28,7 @@ export interface UnspentRetrieveResponse {
 
   last_updated: UnspentRetrieveResponse.LastUpdated;
 
-  next_cursor: string | unknown;
+  next_cursor: string;
 }
 
 export namespace UnspentRetrieveResponse {

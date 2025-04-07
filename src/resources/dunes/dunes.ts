@@ -73,7 +73,7 @@ export interface DuneOpenParams {
   /**
    * The maximum number of dunes that can be minted.
    */
-  cap: string | unknown;
+  cap: string;
 
   /**
    * The number of decimal places that the dune can be divided into
@@ -83,32 +83,32 @@ export interface DuneOpenParams {
   /**
    * The block height at which the dune will stop minting.
    */
-  heightEnd: number | string | unknown;
+  heightEnd: number | null | string | null;
 
   /**
    * The block height at which the dune will start minting.
    */
-  heightStart: number | string | unknown;
+  heightStart: number | null | string | null;
 
   /**
    * The maximum number of dunes that can be minted per transaction.
    */
-  limit: number | string | unknown;
+  limit: number | null | string | null;
 
   /**
    * The offset at which the dune will stop minting.
    */
-  offsetEnd: number | string | unknown;
+  offsetEnd: number | null | string | null;
 
   /**
    * The offset at which the dune will start minting.
    */
-  offsetStart: number | string | unknown;
+  offsetStart: number | null | string | null;
 
   /**
    * The amount of doge to send to the dune when it is created.
    */
-  premine: string | unknown;
+  premine: string;
 
   /**
    * An ASCII string of length 1 to represent the dune.

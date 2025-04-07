@@ -24,7 +24,7 @@ export class Utxos extends APIResource {
 }
 
 export interface UtxoRetrieveResponse {
-  next_cursor: string | unknown;
+  next_cursor: string;
 
   utxos: Array<UtxoRetrieveResponse.Utxo>;
 }

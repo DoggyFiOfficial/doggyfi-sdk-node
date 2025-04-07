@@ -41,7 +41,7 @@ describe('resource dunes', () => {
       limit: 0,
       offsetEnd: 50000,
       offsetStart: 50000,
-      premine: 'string',
+      premine: 'premine',
       symbol: 'D',
       ticker: 'THISISADUNENAME',
     });
@@ -64,7 +64,7 @@ describe('resource dunes', () => {
       limit: 0,
       offsetEnd: 50000,
       offsetStart: 50000,
-      premine: 'string',
+      premine: 'premine',
       symbol: 'D',
       ticker: 'THISISADUNENAME',
       openMint: true,

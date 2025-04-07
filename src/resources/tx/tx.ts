@@ -97,7 +97,7 @@ export namespace TxRetrieveResponse {
         | 'scripthash'
         | 'witness_v0_keyhash';
 
-      addresses?: Array<string> | unknown;
+      addresses?: Array<string>;
 
       reqSigs?: number;
     }

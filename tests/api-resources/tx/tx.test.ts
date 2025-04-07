@@ -8,7 +8,7 @@ const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'ht
 describe('resource tx', () => {
   test('retrieve', async () => {
     const responsePromise = client.tx.retrieve(
-      '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be',
+      '5376daac28dd658d46295e161cda557c1332b00466a98f786527b4aff604c15f',
     );
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -22,7 +22,7 @@ describe('resource tx', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.tx.retrieve('7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', {
+      client.tx.retrieve('5376daac28dd658d46295e161cda557c1332b00466a98f786527b4aff604c15f', {
         path: '/_stainless_unknown_path',
       }),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);
@@ -30,8 +30,8 @@ describe('resource tx', () => {
 
   test('build: only required params', async () => {
     const responsePromise = client.tx.build({
-      inputs: [{ txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 }],
-      outputs: [{ address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 }],
+      inputs: [{ txid: '5376daac28dd658d46295e161cda557c1332b00466a98f786527b4aff604c15f', vout: 0 }],
+      outputs: [{ address: 'D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU', satoshis: 100000000 }],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -44,14 +44,14 @@ describe('resource tx', () => {
 
   test('build: required and optional params', async () => {
     const response = await client.tx.build({
-      inputs: [{ txid: '7850e20b7672ac45861160fff64b4a11f7980172c1d47e388b4b25b9f2f951be', vout: 2 }],
-      outputs: [{ address: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', satoshis: 0 }],
-      fees: { fundingAddress: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', feeRate: 164312 },
+      inputs: [{ txid: '5376daac28dd658d46295e161cda557c1332b00466a98f786527b4aff604c15f', vout: 0 }],
+      outputs: [{ address: 'D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU', satoshis: 100000000 }],
+      fees: { feeRate: 150000, fundingAddress: 'D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU' },
     });
   });
 
-  test('push', async () => {
-    const responsePromise = client.tx.push();
+  test('push: only required params', async () => {
+    const responsePromise = client.tx.push({ txHex: '5d0bea8699190e14fcf8fe525bc09b00...' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -61,41 +61,7 @@ describe('resource tx', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('push: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.tx.push({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      DoggyfiSDK.NotFoundError,
-    );
-  });
-
-  test('push: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.tx.push('body', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      DoggyfiSDK.NotFoundError,
-    );
-  });
-
-  test('sendDoge: only required params', async () => {
-    const responsePromise = client.tx.sendDoge({
-      amount: 37.214,
-      from: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
-      to: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
-    });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('sendDoge: required and optional params', async () => {
-    const response = await client.tx.sendDoge({
-      amount: 37.214,
-      from: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
-      to: 'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
-      feeRate: 0,
-    });
+  test('push: required and optional params', async () => {
+    const response = await client.tx.push({ txHex: '5d0bea8699190e14fcf8fe525bc09b00...' });
   });
 });

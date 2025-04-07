@@ -7,7 +7,7 @@ const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'ht
 
 describe('resource utxos', () => {
   test('retrieve', async () => {
-    const responsePromise = client.dunes.utxos.retrieve('duneId');
+    const responsePromise = client.dunes.utxos.retrieve('5430745:36');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -19,15 +19,15 @@ describe('resource utxos', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.dunes.utxos.retrieve('duneId', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      DoggyfiSDK.NotFoundError,
-    );
+    await expect(
+      client.dunes.utxos.retrieve('5430745:36', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(DoggyfiSDK.NotFoundError);
   });
 
   test('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.dunes.utxos.retrieve('duneId', { cursor: 'cursor' }, { path: '/_stainless_unknown_path' }),
+      client.dunes.utxos.retrieve('5430745:36', { cursor: 'cursor' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);
   });
 });

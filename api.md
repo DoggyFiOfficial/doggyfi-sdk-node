@@ -15,54 +15,20 @@ Types:
 - <code><a href="./src/resources/tx/tx.ts">TxRetrieveResponse</a></code>
 - <code><a href="./src/resources/tx/tx.ts">TxBuildResponse</a></code>
 - <code><a href="./src/resources/tx/tx.ts">TxPushResponse</a></code>
-- <code><a href="./src/resources/tx/tx.ts">TxSendDogeResponse</a></code>
 
 Methods:
 
 - <code title="get /tx/{hash}">client.tx.<a href="./src/resources/tx/tx.ts">retrieve</a>(hash) -> TxRetrieveResponse</code>
 - <code title="post /tx/build">client.tx.<a href="./src/resources/tx/tx.ts">build</a>({ ...params }) -> TxBuildResponse</code>
 - <code title="post /tx/push">client.tx.<a href="./src/resources/tx/tx.ts">push</a>({ ...params }) -> TxPushResponse</code>
-- <code title="post /tx/send/doge">client.tx.<a href="./src/resources/tx/tx.ts">sendDoge</a>({ ...params }) -> TxSendDogeResponse</code>
 
 ## Psbt
 
-Types:
-
-- <code><a href="./src/resources/tx/psbt.ts">PsbtDecodeResponse</a></code>
-
-Methods:
-
-- <code title="post /tx/psbt/decode">client.tx.psbt.<a href="./src/resources/tx/psbt.ts">decode</a>({ ...params }) -> PsbtDecodeResponse</code>
-
 # Drc
-
-Types:
-
-- <code><a href="./src/resources/drc/drc.ts">DrcSendExactResponse</a></code>
-
-Methods:
-
-- <code title="post /drc20/sendExactDRC20/{address}/{ticker}/{amount}">client.drc.<a href="./src/resources/drc/drc.ts">sendExact</a>(address, ticker, amount) -> DrcSendExactResponse</code>
 
 ## Balances
 
-Types:
-
-- <code><a href="./src/resources/drc/balances.ts">BalanceRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /drc/balances/{address}">client.drc.balances.<a href="./src/resources/drc/balances.ts">retrieve</a>(address) -> BalanceRetrieveResponse</code>
-
 ## Info
-
-Types:
-
-- <code><a href="./src/resources/drc/info.ts">InfoRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /drc/info/{ticker}">client.drc.info.<a href="./src/resources/drc/info.ts">retrieve</a>(ticker) -> InfoRetrieveResponse</code>
 
 # Dunes
 
@@ -110,14 +76,6 @@ Methods:
 
 # Blocks
 
-Types:
-
-- <code><a href="./src/resources/blocks.ts">BlockCountResponse</a></code>
-
-Methods:
-
-- <code title="get /blocks/count">client.blocks.<a href="./src/resources/blocks.ts">count</a>() -> string</code>
-
 # FeeRate
 
 Types:
@@ -139,11 +97,3 @@ Methods:
 - <code title="get /tip">client.tips.<a href="./src/resources/tips.ts">retrieve</a>() -> TipRetrieveResponse</code>
 
 # Prices
-
-Types:
-
-- <code><a href="./src/resources/prices.ts">PriceRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /prices/doggyfi-pool/{token}">client.prices.<a href="./src/resources/prices.ts">retrieve</a>(token) -> PriceRetrieveResponse</code>

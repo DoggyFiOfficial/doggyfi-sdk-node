@@ -4,6 +4,9 @@ import { APIResource } from '../resource';
 import * as Core from '../core';
 
 export class Tips extends APIResource {
+  /**
+   * Give a tip
+   */
   retrieve(options?: Core.RequestOptions): Core.APIPromise<TipRetrieveResponse> {
     return this._client.get('/tip', options);
   }
@@ -13,9 +16,9 @@ export interface TipRetrieveResponse {
   /**
    * Tip amount in shibes (100,000,000 = 1 Doge)
    */
-  tip?: string;
+  tip: number;
 
-  tipAddress?: string;
+  tipAddress: string;
 }
 
 export declare namespace Tips {

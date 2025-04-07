@@ -24,34 +24,35 @@ export class Unspents extends APIResource {
 }
 
 export interface UnspentRetrieveResponse {
-  nextCursor: string | null;
+  data: Array<UnspentRetrieveResponse.Data>;
 
-  unspents: Array<UnspentRetrieveResponse.Unspent>;
+  last_updated: UnspentRetrieveResponse.LastUpdated;
+
+  next_cursor: string | unknown;
 }
 
 export namespace UnspentRetrieveResponse {
-  export interface Unspent {
+  export interface Data {
     address: string;
 
     confirmations: number;
 
-    dunes: Array<Unspent.Dune>;
+    dunes: Array<Data.Dune>;
 
-    hash: string;
+    height: number;
 
-    inscriptions: Array<Unspent.Inscription>;
+    inscriptions: Array<Data.Inscription>;
 
-    scriptPubKey: string;
+    satoshis: string;
 
-    /**
-     * Value in satoshis. 1 Doge = 100,000,000
-     */
-    value: string;
+    script_pubkey: string;
 
-    vout_index: number;
+    txid: string;
+
+    vout: number;
   }
 
-  export namespace Unspent {
+  export namespace Data {
     export interface Dune {
       amount: string;
 
@@ -64,18 +65,30 @@ export namespace UnspentRetrieveResponse {
       offset: number;
     }
   }
+
+  export interface LastUpdated {
+    block_hash: string;
+
+    block_height: number;
+  }
 }
 
 export interface UnspentRetrieveParams {
-  /**
-   * Cursor for pagination
-   */
+  count?: number;
+
   cursor?: string;
 
-  /**
-   * Ignore unspents with a value of 100,000
-   */
-  ignoreDust?: boolean | null;
+  exclude_metaprotocols?: boolean;
+
+  filter_dust?: boolean;
+
+  filter_dust_threshold?: number;
+
+  from?: number;
+
+  order?: 'asc' | 'desc';
+
+  to?: number;
 }
 
 export declare namespace Unspents {

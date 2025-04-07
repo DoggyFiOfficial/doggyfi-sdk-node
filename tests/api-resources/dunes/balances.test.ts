@@ -7,7 +7,7 @@ const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'ht
 
 describe('resource balances', () => {
   test('retrieve', async () => {
-    const responsePromise = client.dunes.balances.retrieve('D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM');
+    const responsePromise = client.dunes.balances.retrieve('D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,7 +20,7 @@ describe('resource balances', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.dunes.balances.retrieve('D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', {
+      client.dunes.balances.retrieve('D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU', {
         path: '/_stainless_unknown_path',
       }),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);

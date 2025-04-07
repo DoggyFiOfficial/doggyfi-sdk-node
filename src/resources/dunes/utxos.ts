@@ -24,15 +24,13 @@ export class Utxos extends APIResource {
 }
 
 export interface UtxoRetrieveResponse {
-  nextCursor: string | null;
+  next_cursor: string | unknown;
 
-  unspents: Array<UtxoRetrieveResponse.Unspent>;
+  utxos: Array<UtxoRetrieveResponse.Utxo>;
 }
 
 export namespace UtxoRetrieveResponse {
-  export interface Unspent {
-    address: string | null;
-
+  export interface Utxo {
     confirmations: number;
 
     dune_amount: string;
@@ -41,8 +39,6 @@ export namespace UtxoRetrieveResponse {
 
     satoshis: string;
 
-    script_pubkey: string;
-
     txid: string;
 
     vout: number;
@@ -50,9 +46,6 @@ export namespace UtxoRetrieveResponse {
 }
 
 export interface UtxoRetrieveParams {
-  /**
-   * Cursor for pagination
-   */
   cursor?: string;
 }
 

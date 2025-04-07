@@ -28,43 +28,26 @@ export class Dunes extends APIResource {
 }
 
 export interface DuneMintResponse {
-  /**
-   * Fees in doge
-   */
+  feeRate: number;
+
   fees: number;
 
-  /**
-   * Psbt base64 string, built with bitcoinjs-lib, to be signed
-   */
   psbtHex: string;
 }
 
 export interface DuneOpenResponse {
-  /**
-   * Fees in doge
-   */
+  feeRate: number;
+
   fees: number;
 
-  /**
-   * Psbt base64 string, built with bitcoinjs-lib, to be signed
-   */
   psbtHex: string;
 }
 
 export interface DuneSendResponse {
-  /**
-   * Fee rate in satoshis per byte
-   */
   feeRate: number;
 
-  /**
-   * Fees in doge
-   */
   fees: number;
 
-  /**
-   * Psbt Hex to sign
-   */
   psbtHex: string;
 }
 
@@ -76,9 +59,6 @@ export interface DuneMintParams {
 
   address: string;
 
-  /**
-   * Amount in doge
-   */
   amount: number;
 
   /**
@@ -88,96 +68,83 @@ export interface DuneMintParams {
 }
 
 export interface DuneOpenParams {
-  /**
-   * Address to send to
-   */
   address: string;
 
   /**
-   * A ASCII string of length 1 to represent the dune.
+   * The maximum number of dunes that can be minted.
    */
-  symbol: string;
+  cap: string | unknown;
 
   /**
-   * What the dune should be called?
+   * The number of decimal places that the dune can be divided into
    */
-  ticker: string;
-
-  /**
-   * The maximum number of dunes that can be minted in total.
-   */
-  cap?: string | null;
-
-  /**
-   * The number of decimal places that the dune can be divided into.
-   */
-  divisibility?: number | null;
+  divisibility: number | string;
 
   /**
    * The block height at which the dune will stop minting.
    */
-  heightEnd?: number | null;
+  heightEnd: number | string | unknown;
 
   /**
    * The block height at which the dune will start minting.
    */
-  heightStart?: number | null;
+  heightStart: number | string | unknown;
 
   /**
-   * The maximum number of dunes that can be minted per mint tx, if minting is still
-   * open.
+   * The maximum number of dunes that can be minted per transaction.
    */
-  limit?: string | null;
+  limit: number | string | unknown;
 
   /**
    * The offset at which the dune will stop minting.
    */
-  offsetEnd?: number | null;
+  offsetEnd: number | string | unknown;
 
   /**
    * The offset at which the dune will start minting.
    */
-  offsetStart?: number | null;
-
-  /**
-   * Whether or not the dune is open to mint.
-   */
-  openMint?: boolean | null;
+  offsetStart: number | string | unknown;
 
   /**
    * The amount of doge to send to the dune when it is created.
    */
-  premine?: string;
+  premine: string | unknown;
+
+  /**
+   * An ASCII string of length 1 to represent the dune.
+   */
+  symbol: string;
+
+  /**
+   * What should the dune be called?
+   */
+  ticker: string;
+
+  /**
+   * Whether or not the dune is open to mint.
+   */
+  openMint?: boolean;
 
   /**
    * Whether or not the dune is turbo.
    */
-  turbo?: boolean | null;
+  turbo?: boolean;
 }
 
 export interface DuneSendParams {
-  /**
-   * Amount to send
-   */
-  amount: string;
+  amount: number | string;
 
   /**
-   * Dune ID
+   * Dune id
    */
   duneId: string;
 
-  /**
-   * Address to send from
-   */
   from: string;
 
-  /**
-   * Address to send to
-   */
   to: string;
 
   /**
-   * Fee Rate in Sat/Byte (optional, not including will auto-calculate)
+   * Fee Rate in Sat/Byte
    */
   feeRate?: number;
 }

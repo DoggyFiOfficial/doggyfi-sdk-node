@@ -1,4 +1,4 @@
-configured_endpoints: 19
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/epiphyte-corporation%2Fdoggyfi-sdk-f6ab72c3f426d2ee7f026e3aa102dda091cd36f69f9acd90105a6486ba177e8d.yml
-openapi_spec_hash: c0a7b477519dd5e681ed3d1f6c29890e
+configured_endpoints: 12
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/epiphyte-corporation%2Fdoggyfi-sdk-08591c3a928251ef8540fa518152480fc9292cadd89ead13a67f4df7d86c67c7.yml
+openapi_spec_hash: 52d6ff62d52ef29381a4368f6c57cf79
 config_hash: 916151d28c35cf5f8c1d97b229a256d2

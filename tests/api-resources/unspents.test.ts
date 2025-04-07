@@ -7,7 +7,7 @@ const client = new DoggyfiSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'ht
 
 describe('resource unspents', () => {
   test('retrieve', async () => {
-    const responsePromise = client.unspents.retrieve('D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM');
+    const responsePromise = client.unspents.retrieve('D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,7 +20,7 @@ describe('resource unspents', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.unspents.retrieve('D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM', { path: '/_stainless_unknown_path' }),
+      client.unspents.retrieve('D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);
   });
 
@@ -28,8 +28,17 @@ describe('resource unspents', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.unspents.retrieve(
-        'D83XzHiEEjHYfozYUH8D8jP6ef6G9Bw6HM',
-        { cursor: 'cursor', ignoreDust: true },
+        'D8AXXiGEZeZnMKTKnC9AWB3YUU4jfMAmYU',
+        {
+          count: 0,
+          cursor: 'cursor',
+          exclude_metaprotocols: true,
+          filter_dust: true,
+          filter_dust_threshold: 0,
+          from: 0,
+          order: 'asc',
+          to: 0,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(DoggyfiSDK.NotFoundError);

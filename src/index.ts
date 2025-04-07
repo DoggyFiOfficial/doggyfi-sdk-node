@@ -5,12 +5,12 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import { BlockCountResponse, Blocks } from './resources/blocks';
+import { Blocks } from './resources/blocks';
 import { FeeRate, FeeRateRetrieveResponse } from './resources/fee-rate';
-import { PriceRetrieveResponse, Prices } from './resources/prices';
+import { Prices } from './resources/prices';
 import { TipRetrieveResponse, Tips } from './resources/tips';
 import { UnspentRetrieveParams, UnspentRetrieveResponse, Unspents } from './resources/unspents';
-import { Drc, DrcSendExactResponse } from './resources/drc/drc';
+import { Drc } from './resources/drc/drc';
 import {
   DuneMintParams,
   DuneMintResponse,
@@ -27,8 +27,6 @@ import {
   TxPushParams,
   TxPushResponse,
   TxRetrieveResponse,
-  TxSendDogeParams,
-  TxSendDogeResponse,
 } from './resources/tx/tx';
 
 export interface ClientOptions {
@@ -186,13 +184,11 @@ export declare namespace DoggyfiSDK {
     type TxRetrieveResponse as TxRetrieveResponse,
     type TxBuildResponse as TxBuildResponse,
     type TxPushResponse as TxPushResponse,
-    type TxSendDogeResponse as TxSendDogeResponse,
     type TxBuildParams as TxBuildParams,
     type TxPushParams as TxPushParams,
-    type TxSendDogeParams as TxSendDogeParams,
   };
 
-  export { Drc as Drc, type DrcSendExactResponse as DrcSendExactResponse };
+  export { Drc as Drc };
 
   export {
     Dunes as Dunes,
@@ -204,13 +200,13 @@ export declare namespace DoggyfiSDK {
     type DuneSendParams as DuneSendParams,
   };
 
-  export { Blocks as Blocks, type BlockCountResponse as BlockCountResponse };
+  export { Blocks as Blocks };
 
   export { FeeRate as FeeRate, type FeeRateRetrieveResponse as FeeRateRetrieveResponse };
 
   export { Tips as Tips, type TipRetrieveResponse as TipRetrieveResponse };
 
-  export { Prices as Prices, type PriceRetrieveResponse as PriceRetrieveResponse };
+  export { Prices as Prices };
 }
 
 export { toFile, fileFromPath } from './uploads';

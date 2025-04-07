@@ -4,9 +4,6 @@ import { APIResource } from '../../resource';
 import * as Core from '../../core';
 
 export class Info extends APIResource {
-  /**
-   * Get Dunes info
-   */
   retrieve(duneId: string, options?: Core.RequestOptions): Core.APIPromise<InfoRetrieveResponse> {
     return this._client.get(`/dunes/info/${duneId}`, options);
   }
@@ -17,7 +14,7 @@ export interface InfoRetrieveResponse {
 
   circulating_supply: string;
 
-  divisibility: number | null;
+  divisibility: number;
 
   etching_cenotaph: boolean;
 
@@ -25,7 +22,7 @@ export interface InfoRetrieveResponse {
 
   etching_tx: string;
 
-  max_supply: string | null;
+  max_supply: string | unknown;
 
   mints: number;
 
@@ -33,7 +30,7 @@ export interface InfoRetrieveResponse {
 
   spaced_name: string;
 
-  symbol: string | null;
+  symbol: string;
 
   terms: InfoRetrieveResponse.Terms;
 
@@ -42,17 +39,17 @@ export interface InfoRetrieveResponse {
 
 export namespace InfoRetrieveResponse {
   export interface Terms {
-    amount_per_mint: string | null;
+    amount_per_mint: string | unknown;
 
-    end_height: string | null;
+    end_height: string | unknown;
 
-    end_offset: string | null;
+    end_offset: string | unknown;
 
-    mint_txs_cap: string | null;
+    mint_txs_cap: string | unknown;
 
-    start_height: string | null;
+    start_height: string | unknown;
 
-    start_offset: string | null;
+    start_offset: string | unknown;
   }
 }
 
